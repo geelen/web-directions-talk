@@ -11,31 +11,42 @@ html(class='no-js', lang='en')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
- 
     title
- 
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
- 
     link(rel='stylesheet', href='components/normalize-css/normalize.css')
+
+    // Place favicon.ico and apple-touch-icon.png in the root directory 
+    // build:css styles/main.css 
     link(rel='stylesheet', href='styles/main.css')
+    // endbuild    
+
     script(src='components/modernizr/modernizr.js')
     link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro', rel='stylesheet', type='text/css')
+      
   body
     //if lt IE 7
-      p.chromeframe.
-        You are using an <strong>outdated</strong> browser.
-        Please <a href="http://browsehappy.com/">upgrade your browser</a> or
-        <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a>
-        to improve your experience.
- 
+      p.chromeframe
+        | You are using an outdated browser.
+        a(href='http://browsehappy.com/') Upgrade your browser today
+        | or
+        a(href='http://www.google.com/chromeframe/?redirect=true') install Google Chrome Frame
+        | to better experience this site.
+
+    // if lt IE 9
+      script(src='components/es5-shim/es5-shim.js')
+      script(src='components/json3/lib/json3.min.js')
+
     block content
- 
+
     script(src='components/bespoke.js/src/bespoke.js')
+    // build:js scripts/scripts.js 
     script(src='scripts/app.js')
- 
+    // endbuild 
+    
+    // Google Analytics: change UA-XXXXX-X to be your site's ID. 
     script
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src='//www.google-analytics.com/ga.js';
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
