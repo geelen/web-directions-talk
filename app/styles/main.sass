@@ -1,62 +1,72 @@
 @import 'compass/css3'
 
-html
-  height: 100%
-body
-  background: #000
-  font-family: 'Source Sans Pro'
-  color: #fff
-  overflow: hidden
+*
+  +box-sizing(border-box)
+  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
+
+html, body
   width: 100%
   height: 100%
 
-  .bespoke-parent
-    background: #111
+body
+  background: #111
+  font-family: 'Source Sans Pro'
+  font-weight: 400
+  color: #fff
+  overflow: hidden
 
-  .bespoke-slide
-    +box-align(center)
-    +box-pack(center)
-    position: absolute
-    top: 0
-    left: 0
+article
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  &::before
+    content: ''
     width: 100%
     height: 100%
-    font-size: 3em
-
-  .bespoke-inactive
-    display: none
-
-  .bespoke-active
-    +display-box()
-
-  section
-    background-position: center center
+    display: block
+  &.waves::before
+    background-image: url('http://stream1.gifsoup.com/view/609536/beach-waves-o.gif')
     background-size: cover
+    +filter(blur(10px) grayscale(0.3) brightness(0.4))
 
-    video
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      height: 100%
 
-    .content
-      padding: 1em
-      word-break: break-word
-    
-    .underline
-      border-bottom: 0.1em solid #fff
+.bespoke-slide
+  +box-align(center)
+  +box-pack(center)
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  font-size: 3em
 
-    .strikethrough
-      text-decoration: line-through
-      color: #999
+.bespoke-inactive
+  display: none
 
-    .classy
-      font-family: Baskerville
-      font-style: italic
+.bespoke-active
+  +display-box()
 
-    .code
-      font-family: 'Source Code Pro'
-      font-size: 0.8125em
-      font-weight: bold
-      color: #00ccff
+section
+  .content
+    padding: 1em
+    word-break: break-word
+  
+  .underline
+    border-bottom: 0.1em solid #fff
+
+  .strikethrough
+    text-decoration: line-through
+    color: #999
+
+  .classy
+    font-family: Baskerville
+    font-style: italic
+
+  .code
+    font-family: 'Source Code Pro'
+    font-size: 0.8125em
+    font-weight: bold
+    color: #00ccff

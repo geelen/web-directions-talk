@@ -3,6 +3,8 @@
 
   console.log('ok');
 
-  bespoke.horizontal.from('article');
+  bespoke.horizontal.from('article', {
+    state: true
+  });
 })();
 

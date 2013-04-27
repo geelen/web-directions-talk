@@ -1,7 +1,12 @@
 extends layout
 
 block content
-  article
-    section Slide 1
-    section Slide 2
+  article.bespoke-parent
+    section(data-bespoke-state='waves')
+      .content 
+        | Javascript's 
+        strong Slightly 
+        | Stricter Mode
+
+    section(data-bespoke-state='none') Slide 2
     section Slide 3
