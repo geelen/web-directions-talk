@@ -1,9 +1,23 @@
 @import 'compass/css3'
 
+$font-color: darken(white, 5%)
+$darker-font: darken($font-color, 30%)
+$darker-again: darken($font-color, 60%)
+
 *
   +box-sizing(border-box)
   -webkit-font-smoothing: antialiased
   font-smoothing: antialiased
+
+a
+  color: inherit
+  text-decoration: none
+  opacity: 0.8
+  border-bottom: 1px solid $darker-again
+  &:hover
+    +transition(all 0.3s)
+    opacity: 1.0
+    border-bottom-color: inherit
 
 html, body
   width: 100%
@@ -22,24 +36,46 @@ article
   left: 0
   width: 100%
   height: 100%
-  &::before
-    content: ''
-    width: 20%
-    height: 20%
+  &::before, &::after
     display: block
     position: absolute
+    background-size: cover
+    background-position: center center
+    content: ''
+    +filter(grayscale(0.3) brightness(0.3))
+  &::before
+    z-index: 1
+    width: 20%
+    height: 20%
     top: 50%
     left: 50%
     margin-top: -5%
     margin-left: -10%
-    +filter(blur(1px) grayscale(0.3) brightness(0.4))
     +transform(scale(6.5))
-  &.waves::before
-    background-image: url('http://stream1.gifsoup.com/view/609536/beach-waves-o.gif')
-    background-size: cover
+  &::after
+    z-index: 1
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
 
+  // use ::before for gifs (small size, scaled up)
+  &.waves::before
+    +filter(blur(1px) grayscale(0.3) brightness(0.4))
+    background-image: url('http://stream1.gifsoup.com/view/609536/beach-waves-o.gif')
+  &.chuck::before
+    background-image: url('http://holykkphils.files.wordpress.com/2011/06/chuck-norris-approved.gif')
+  &.approve::before
+    background-image: url('http://boards.420chan.org/pol/src/1366522404633.gif')
+
+  // use ::after for images (full size, cover)
+  &.confession::after
+    background-image: url('http://i1.kym-cdn.com/photos/images/original/000/336/370/361.jpg')
+  &.ruby::after
+    background-image: url('/images/ruby-australia-logo.png')
 
 .bespoke-slide
+  z-index: 2
   +box-align(center)
   +box-pack(center)
   position: absolute
@@ -47,7 +83,6 @@ article
   left: 0
   width: 100%
   height: 100%
-  font-size: 3em
 
 .bespoke-inactive
   display: none
@@ -56,9 +91,22 @@ article
   +display-box()
 
 section
+  color: $font-color
+  text-align: center
+
   .content
     padding: 1em
     word-break: break-word
+
+  h1
+    font-size: 3em
+    font-weight: 300
+    margin: 0
+
+  h2
+    font-size: 3em
+    font-weight: 300
+    margin: 0
   
   .underline
     border-bottom: 0.1em solid #fff
@@ -67,12 +115,42 @@ section
     text-decoration: line-through
     color: #999
 
-  .classy
-    font-family: Baskerville
-    font-style: italic
-
   .code
     font-family: 'Source Code Pro'
     font-size: 0.8125em
     font-weight: bold
     color: #00ccff
+
+  .byline
+    color: $darker-font
+    margin: 20px 0
+    +display-box()
+    +box-align(center)
+    &::before, &::after
+      content: ''
+      display: block
+      +box-flex(1)
+      height: 0
+      padding-top: 1px
+      border-bottom: 1px dotted $darker-again
+    > *
+      margin-right: 20px
+      &:first-child
+        margin-left: 20px
+
+  .unbrokenline
+    border-bottom: 1px dotted $darker-again
+    margin: 30px 0 29px
+
+  .classy
+    font-family: Baskerville
+    font-style: italic
+
+  .me
+    margin: 10px auto
+    width: 80px
+    height: 80px
+    +border-radius(60px)
+    background-image: url('/images/me_720.png')
+    background-size: 120px
+    background-position: -20px -30px

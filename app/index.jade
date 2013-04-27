@@ -2,11 +2,52 @@ extends layout
 
 block content
   article.bespoke-parent
-    section(data-bespoke-state='waves')
-      .content 
-        | Javascript's 
-        strong Slightly 
-        | Stricter Mode
+    section(data-bespoke-state='waves blur')
+      .content
+        .byline
+          .classy This talk is called:
+        h1
+          | Javascript's 
+          strong Slightly 
+          | Stricter Mode
+        .byline
+          .classy with this guy:
+        .me
+        .byline
+          a(href='http://goodfil.ms') http://goodfil.ms
+          a(href='https://twitter.com/glenmaddern') @glenmaddern
+          a(href='http://github.com/geelen') geelen
 
-    section(data-bespoke-state='none') Slide 2
-    section Slide 3
+    section(data-bespoke-state='confession')
+      .content 
+        .byline
+          .classy Firstly:
+        h1 A confession
+        .unbrokenline
+
+    section(data-bespoke-state='confession')
+      .content 
+        .unbrokenline
+        h1 I am not a Javascript developer
+        .unbrokenline
+
+    section(data-bespoke-state='')
+      .content 
+        h2 My happy place
+        .byline
+          .classy is somewhere between
+        h2 the 
+          strong neckbeard wilderness 
+          | of C
+        .byline
+          .classy and
+        h2 the 
+          strong ivory towers 
+          | of Haskell
+
+    section(data-bespoke-state='ruby')
+      .content 
+        .unbrokenline
+        h1 but I mostly write
+          strong  Ruby
+        .unbrokenline
