@@ -83,6 +83,33 @@ block content
         h2
           strong strict mode
 
+    section(data-bespoke-state='code')
+      .content 
+        pre
+          code(data-language='ruby') #{  '# rubby.rb\na = b' }
+        pre
+          code(data-language='coffee') #{  '# cahfee.coffee\na = b' }
+        pre
+          code(data-language='javascript') #{  '//lolscript.js\nvar a = b;' }
+
+    section(data-bespoke-state='code')
+      .content
+        pre(data-bespoke-bullet)
+          code(data-language='javascript').
+            var a = Math.PI;
+            console.log(a);
+            // 3.14159...
+        pre(data-bespoke-bullet)
+          code(data-language='javascript') #{  'var a = Math.PI\nconsole.log(a)\n//=> 3.14159...' }
+        pre(data-bespoke-bullet)
+          code(data-language='javascript') #{  'a = Math.PI\nconsole.log(a)\n//=> 3.14159...' }
+        pre(data-bespoke-bullet)
+          code(data-language='javascript').
+            function setVars() {
+              lol = true;
+            }
+            console.log(lol);
+            
     section(data-bespoke-state='coffee')
       .content 
         h2

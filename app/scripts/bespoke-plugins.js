@@ -24,11 +24,17 @@
           slide.forEach(function(bullet, b) {
             bullet.classList.add('bespoke-bullet');
 
-            if (s < slideIndex || s === slideIndex && b <= bulletIndex) {
+            if (s < slideIndex || s === slideIndex && b < bulletIndex) {
               bullet.classList.add('bespoke-bullet-active');
+              bullet.classList.remove('bespoke-bullet-last-active');
+              bullet.classList.remove('bespoke-bullet-inactive');
+            } else if (s === slideIndex && b === bulletIndex) {
+              bullet.classList.add('bespoke-bullet-active');
+              bullet.classList.add('bespoke-bullet-last-active');
               bullet.classList.remove('bespoke-bullet-inactive');
             } else {
               bullet.classList.add('bespoke-bullet-inactive');
+              bullet.classList.remove('bespoke-bullet-last-active');
               bullet.classList.remove('bespoke-bullet-active');
             }
           });

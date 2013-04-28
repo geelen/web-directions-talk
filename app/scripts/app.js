@@ -3,7 +3,8 @@
 
   bespoke.horizontal.from('article', {
     state: true,
-    hash: true
+    hash: true,
+    bullets: true
   });
 })();
 
