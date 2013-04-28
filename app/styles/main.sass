@@ -35,7 +35,7 @@ html, body
 
 body
   background: #111
-  font-family: 'Source Sans Pro', sans-serif
+  font-family: source-sans-pro, sans-serif
   font-weight: 400
   color: #fff
   overflow: hidden
@@ -83,14 +83,15 @@ article
     background-image: url('http://i1.kym-cdn.com/photos/images/original/000/336/370/361.jpg')
   &.ruby::after
     background-image: url('/images/ruby-australia-logo.png')
+  &.love::after
+    background-image: url('/images/love_coloring.jpg')
 
   // neither for solid colours
   &.code
-    background-color: #fdf6e3
+    background-color: darken(#fdf6e3, 5%)
 
 .bespoke-slide
   z-index: 2
-  +display-box()
   +box-align(center)
   +box-pack(center)
   position: absolute
@@ -100,11 +101,24 @@ article
   height: 100%
 
 .bespoke-inactive
+  display: none
+
+.bespoke-after-1
+  z-index: -1
+  +display-box()
   opacity: 0
+  .content > *
+    opacity: 0
 
 .bespoke-active
-  +transition(opacity 1s)
+  +display-box()
   opacity: 1
+  .content > *
+    opacity: 1
+
+    @for $i from 1 through 10
+      &:nth-child(#{$i})
+        +transition(opacity 0.5s linear 0.3s * ($i - 1))
 
 section
   color: $font-color
@@ -167,7 +181,7 @@ section
     background-position: -20px -30px
 
 pre, code
-  font-family: 'Source Code Pro', 'Monaco', courier, monospace
+  font-family: source-code-pro, 'Monaco', courier, monospace
   font-size: 1.2em
   font-weight: 400
 
