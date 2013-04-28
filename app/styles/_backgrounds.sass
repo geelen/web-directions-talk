@@ -42,6 +42,10 @@ article
   &.coffee::before
     +filter(grayscale(0.3) brightness(0.4))
     background-image: url('http://24.media.tumblr.com/tumblr_lzvxa27m6M1r2gn3bo1_400.gif')
+  &.tldr::before
+    +transform(scale(5))
+    +filter(grayscale(0.5) brightness(0.2))
+    background-image: url('http://i0.kym-cdn.com/photos/images/newsfeed/000/154/912/berneydidnotread.gif?1318992465')
 
 
   // use ::after for images (full size, cover)
