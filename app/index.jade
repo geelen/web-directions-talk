@@ -30,35 +30,47 @@ block content
         .unbrokenline
         h1 I am not really a Javascript developer
         .unbrokenline
+        .byline
+          .classy ... but the web is awesome
+
+    section(data-bespoke-state='goodfilms')
+      .content 
+        .byline
+          .classy I built:
+        h1 Goodfilms
+        .unbrokenline
 
     section(data-bespoke-state='love')
       .content 
-        .unbrokenline
-        h1 #{ "I <3 Javascript" }
-        .unbrokenline
-
-    section(data-bespoke-state='')
-      .content 
-        h2 My happy place
         .byline
-          .classy is somewhere between
-        h2 the 
-          strong neckbeard wilderness 
-          | of C
+          .classy And now:
+        h1 I love Javascript
         .byline
-          .classy and
-        h2 the
-          strong  ivory towers 
-          | of Haskell
-
-    section(data-bespoke-state='ruby')
-      .content 
-        .unbrokenline
-        h1 but I mostly write
-          strong  Ruby
-        .unbrokenline
+          .classy ...but I still don't 'know' it.
 
     section(data-bespoke-state='code')
       .content 
         pre
           code(data-language='javascript') #{  '\n "use strict"; \n\n' }
+
+    section(data-bespoke-state='yeoman')
+      .content 
+        .unbrokenline
+        h1
+          strong Yeoman
+        .byline
+          .classy is awesome.
+
+    section(data-bespoke-state='code')
+      .content 
+        pre
+          code(data-language='javascript') #{  '\n "use strict"; \n\n' }
+
+    section(data-bespoke-state='coffee')
+      .content 
+        h2
+          strong CoffeeScript
+          |  is awesome.
+        .unbrokenline
+        h2 but it helps to
+          strong  know Javascript first

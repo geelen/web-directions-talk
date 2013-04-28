@@ -1,0 +1,61 @@
+
+article
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  &::before, &::after
+    display: block
+    position: absolute
+    background-size: cover
+    background-position: center center
+    content: ''
+    +filter(grayscale(0.3) brightness(0.3))
+  &::before
+    z-index: 1
+    width: 20%
+    height: 20%
+    top: 50%
+    left: 50%
+    margin-top: -5%
+    margin-left: -10%
+    +transform(scale(6.5))
+  &::after
+    z-index: 1
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+  // use ::before for gifs (small size, scaled up)
+  &.waves::before
+    +filter(blur(1px) grayscale(0.3) brightness(0.4))
+    background-image: url('http://stream1.gifsoup.com/view/609536/beach-waves-o.gif')
+  &.chuck::before
+    background-image: url('http://holykkphils.files.wordpress.com/2011/06/chuck-norris-approved.gif')
+  &.approve::before
+    background-image: url('http://boards.420chan.org/pol/src/1366522404633.gif')
+  &.goodfilms::before
+    +filter(grayscale(0.3) brightness(0.4))
+    background-image: url('http://24.media.tumblr.com/tumblr_lgb02mCfLm1qe0eclo1_r5_500.gif')
+  &.coffee::before
+    +filter(grayscale(0.3) brightness(0.4))
+    background-image: url('http://24.media.tumblr.com/tumblr_lzvxa27m6M1r2gn3bo1_400.gif')
+
+
+  // use ::after for images (full size, cover)
+  &.confession::after
+    background-image: url('http://i1.kym-cdn.com/photos/images/original/000/336/370/361.jpg')
+  &.ruby::after
+    background-image: url('/images/ruby-australia-logo.png')
+  &.love::after
+    background-image: url('/images/love_coloring.jpg')
+  &.yeoman::after
+    +filter(grayscale(0.6) contrast(0.9) brightness(0.3))
+    background-image: url('http://yeoman.io/assets/img/yeoman-005.png')
+
+
+  // neither for solid colours
+  &.code
+    background-color: darken(#fdf6e3, 5%)
