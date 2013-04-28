@@ -90,6 +90,7 @@ article
 
 .bespoke-slide
   z-index: 2
+  +display-box()
   +box-align(center)
   +box-pack(center)
   position: absolute
@@ -99,10 +100,11 @@ article
   height: 100%
 
 .bespoke-inactive
-  display: none
+  opacity: 0
 
 .bespoke-active
-  +display-box()
+  +transition(opacity 1s)
+  opacity: 1
 
 section
   color: $font-color
