@@ -10,6 +10,7 @@ article
     position: absolute
     background-size: cover
     background-position: center center
+    background-repeat: no-repeat
     content: ''
     +filter(grayscale(0.3) brightness(0.3))
   &::before
@@ -20,7 +21,7 @@ article
     left: 50%
     margin-top: -5%
     margin-left: -10%
-    +transform(scale(6.5))
+    +transform(scale(5.5))
   &::after
     z-index: 1
     top: 0
@@ -30,6 +31,7 @@ article
 
   // use ::before for gifs (small size, scaled up)
   &.waves::before
+    +transform(scale(6.5))
     +filter(blur(1px) grayscale(0.3) brightness(0.4))
     background-image: url('http://stream1.gifsoup.com/view/609536/beach-waves-o.gif')
   &.chuck::before
@@ -43,10 +45,11 @@ article
     +filter(grayscale(0.3) brightness(0.4))
     background-image: url('http://24.media.tumblr.com/tumblr_lzvxa27m6M1r2gn3bo1_400.gif')
   &.tldr::before
-    +transform(scale(5))
     +filter(grayscale(0.5) brightness(0.2))
     background-image: url('http://i0.kym-cdn.com/photos/images/newsfeed/000/154/912/berneydidnotread.gif?1318992465')
-
+  &.yolo::before
+    +filter(grayscale(0.5) brightness(0.5))
+    background-image: url('http://24.media.tumblr.com/tumblr_m30nd7SIk41r34vqgo1_1280.gif')
 
   // use ::after for images (full size, cover)
   &.confession::after
@@ -58,7 +61,15 @@ article
   &.yeoman::after
     +filter(grayscale(0.6) contrast(0.9) brightness(0.3))
     background-image: url('http://yeoman.io/assets/img/yeoman-005.png')
+  &.programming::after
+    +filter(none)
+    background-size: contain
+    background-image: url('http://imgon.net/di-JMPP.gif')
 
   // neither for solid colours
   &.code
     background-color: darken(#fdf6e3, 5%)
+    section
+      color: black
+  &.programming
+    background-color: white

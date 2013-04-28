@@ -18,16 +18,6 @@ block content
           a(href='https://twitter.com/glenmaddern') @glenmaddern
           a(href='http://github.com/geelen') geelen
 
-    section(data-bespoke-state='tldr')
-      .content 
-        .byline
-          .classy TL;DR:
-        h1 Use
-          strong  Strict Mode
-          |  inside an
-          strong  IIFE
-        .unbrokenline
-
     section(data-bespoke-state='confession')
       .content 
         .byline
@@ -40,28 +30,32 @@ block content
         .unbrokenline
         h1 I am not really a Javascript developer
         .unbrokenline
-        .byline
-          .classy ... but the web is awesome
 
     section(data-bespoke-state='goodfilms')
       .content 
         .byline
-          .classy I built:
-        h1 Goodfilms
+          .classy When I built
+        h1 
+          strong Goodfilms
         .unbrokenline
 
-    section(data-bespoke-state='love')
+    section(data-bespoke-state='coffee')
       .content 
         .byline
-          .classy And now:
-        h1 I love Javascript
+          .classy I used
+        h1 
+          strong Coffeescript
         .byline
-          .classy ...but I still don't 'know' it.
+          .classy and still do.
+
+    section(data-bespoke-state='programming')
 
     section(data-bespoke-state='code')
       .content 
         pre
-          code(data-language='javascript') #{  '\n "use strict"; \n\n' }
+          code.rainbow(data-language='javascript')
+            span.string "use strict"
+            | ;
 
     section(data-bespoke-state='yeoman')
       .content 
@@ -74,7 +68,9 @@ block content
     section(data-bespoke-state='code')
       .content 
         pre
-          code(data-language='javascript') #{  '\n "use strict"; \n\n' }
+          code.rainbow(data-language='javascript')
+            span.string "use strict"
+            | ;
 
     section(data-bespoke-state='')
       .content 
@@ -93,14 +89,34 @@ block content
         h2
           strong strict mode
 
+    section(data-bespoke-state='')
+      .content 
+        .byline
+          .classy Or,
+        h2 Bugs
+        .byline
+          .classy that
+        h2
+          strong Strict mode fixes
+        .byline
+          .classy that I
+        h2 didn't know existed
+        .unbrokenline
+
     section(data-bespoke-state='code')
       .content 
         pre
-          code(data-language='ruby') #{  '# rubby.rb\na = b' }
+          code(data-language='ruby').
+            # rubby.rb
+            a = "foo"
         pre
-          code(data-language='coffee') #{  '# cahfee.coffee\na = b' }
+          code(data-language='coffee').
+            # cahfee.coffee
+            a = "foo"
         pre
-          code(data-language='javascript') #{  '//lolscript.js\nvar a = b;' }
+          code(data-language='javascript').
+            //lolscript.js
+            var a = "foo";
 
     section(data-bespoke-state='code')
       .content
@@ -110,15 +126,130 @@ block content
             console.log(a);
             // 3.14159...
         pre(data-bespoke-bullet)
-          code(data-language='javascript') #{  'var a = Math.PI\nconsole.log(a)\n//=> 3.14159...' }
-        pre(data-bespoke-bullet)
-          code(data-language='javascript') #{  'a = Math.PI\nconsole.log(a)\n//=> 3.14159...' }
+          code(data-language='javascript').
+            var a = Math.PI
+            console.log(a)
+            // 3.14159...
         pre(data-bespoke-bullet)
           code(data-language='javascript').
-            function setVars() {
-              lol = true;
+            a = Math.PI
+            console.log(a)
+            // 3.14159...
+        pre(data-bespoke-bullet)
+          code(data-language='javascript').
+            function someSetup() {
+              a = Math.PI;
             }
-            console.log(lol);
+            someSetup();
+            console.log(a);
+            // 3.14159...
+
+    section(data-bespoke-state='code')
+      .content
+        table
+          thead
+            tr
+              td 
+                h4 Non-strict mode
+              td 
+                h4 Strict mode
+          tbody
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    function someSetup() {
+                      a = Math.PI;
+                    }
+                    someSetup();
+                    console.log(a);
+                    // 3.14159...
+              td
+                pre
+                  code.referrorline2(data-language='javascript').
+                    "use strict";
+                    function someSetup() {
+                      a = Math.PI; // BOOM!
+                    }
+                    someSetup();
+                    console.log(a);
+            tr
+              td
+              td 
+                h4 throws ReferenceError
+                "Strict mode forbids implicit creation of global property 'a'"
+
+    section(data-bespoke-state='code')
+      .content.nofade
+        table
+          thead
+            tr
+              td 
+                h4(data-bespoke-bullet) Non-strict mode
+                h4(data-bespoke-bullet) YOLO mode
+              td 
+                h4 Strict mode
+          tbody
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    function someSetup() {
+                      a = Math.PI;
+                    }
+                    someSetup();
+                    console.log(a);
+                    // 3.14159...
+              td
+                pre
+                  code.referrorline2(data-language='javascript').
+                    "use strict";
+                    function someSetup() {
+                      var a = Math.PI;
+                    }
+                    someSetup();
+                    console.log(a); //BOOM
+            tr
+              td
+              td 
+                h4 throws ReferenceError
+                "Can't find variable: a"
+
+    section(data-bespoke-state='yolo')
+      .content
+
+    section(data-bespoke-state='code')
+      .content
+        table
+          thead
+            tr
+              td 
+                h4 YOLO mode
+              td 
+                h4 Strict mode
+          tbody
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    var a = {x: 1, y: 2};
+                    var x = 3;
+                    with (a) {
+                      console.log(x);
+                    }
+                    // 1
+              td
+                pre
+                  code.referrorline2(data-language='javascript').
+                    var a = {x: 1, y: 2};
+                    var x = 3;
+                    with (a) { //BOOM
+                      console.log(x);
+                    }
+            tr
+              td
+              td 
+                h4 Syntax Error
 
     section(data-bespoke-state='coffee')
       .content 
@@ -128,3 +259,20 @@ block content
         .unbrokenline
         h2 but it helps to
           strong  know Javascript first
+
+    section(data-bespoke-state='tldr')
+      .content 
+        .byline
+          .classy TL;DR:
+        h1 Use
+          strong  Strict Mode
+          |  inside an
+          strong  IIFE
+        .unbrokenline
+
+    section(data-bespoke-state='love')
+      .content 
+        .unbrokenline
+        h1 I love the Web
+        .byline
+          .classy ...but I still don't 'know' JS.
