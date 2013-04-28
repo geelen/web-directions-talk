@@ -9,6 +9,16 @@ $darker-again: darken($font-color, 60%)
   -webkit-font-smoothing: antialiased
   font-smoothing: antialiased
 
+// hides flash of unfonted
+html
+  .content
+    opacity: 1
+    +transition(opacity 1s)
+  &.wf-loading
+    .content
+      opacity: 0
+      +transition(none)
+
 a
   color: inherit
   text-decoration: none
@@ -25,7 +35,7 @@ html, body
 
 body
   background: #111
-  font-family: 'Source Sans Pro'
+  font-family: 'Source Sans Pro', sans-serif
   font-weight: 400
   color: #fff
   overflow: hidden
@@ -119,14 +129,9 @@ section
     text-decoration: line-through
     color: #999
 
-  .code
-    font-family: 'Source Code Pro'
-    font-size: 0.8125em
-    font-weight: bold
-    color: #00ccff
-
   .byline
     color: $darker-font
+    font-size: 1em
     margin: 20px 0
     +display-box()
     +box-align(center)
@@ -144,10 +149,10 @@ section
 
   .unbrokenline
     border-bottom: 1px dotted $darker-again
-    margin: 30px 0 29px
+    margin: 30px 0 30px
 
   .classy
-    font-family: Baskerville
+    font-family: 'Libre Baskerville'
     font-style: italic
 
   .me
@@ -158,6 +163,11 @@ section
     background-image: url('/images/me_720.png')
     background-size: 120px
     background-position: -20px -30px
+
+pre, code
+  font-family: 'Source Code Pro', 'Monaco', courier, monospace
+  font-size: 1.2em
+  font-weight: 400
 
 pre
   box-shadow: 0 0 1px 0 rgba(black, 1), 0 0 0px 8px white, 0 0 0px 9px rgba(black, 0.1), 10px 10px 20px 3px rgba(black, 0.2), -10px 10px 20px 3px rgba(black, 0.2)

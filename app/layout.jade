@@ -6,7 +6,7 @@
 //if IE 8
     <html class="no-js lt-ie9" lang="en">
 <!--[if gt IE 8]><!-->
-html(class='no-js', lang='en')
+html.no-js.wf-loading(lang='en')
   <!--<![endif]-->
   head
     meta(charset='utf-8')
@@ -23,8 +23,7 @@ html(class='no-js', lang='en')
     // endbuild    
 
     script(src='components/modernizr/modernizr.js')
-    link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Code+Pro&effect=fire-animation', rel='stylesheet', type='text/css')
-      
+
   body
     //if lt IE 7
       p.chromeframe
@@ -46,6 +45,20 @@ html(class='no-js', lang='en')
     script(src='scripts/rainbow.custom.min.js')
     script(src='scripts/app.js')
     // endbuild 
+
+    script
+      WebFontConfig = { 
+        google: { families: [ 'Libre+Baskerville:400italic:latin', 'Source+Sans+Pro:300,400,700', 'Source+Code+Pro' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
     
     // Google Analytics: change UA-XXXXX-X to be your site's ID. 
     script
