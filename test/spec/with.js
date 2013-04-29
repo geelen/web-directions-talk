@@ -4,7 +4,7 @@ describe("With expression (non-strict)", function() {
     var a = {x: 1, y: 2};
     var x = 3;
     with (a) {
-      expect(a).toBe(1);
-    }     
+      expect(x).toBe(1);
+    }
   });
 });

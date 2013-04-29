@@ -1,7 +1,10 @@
 {
   "name": "web-directions-talk",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "coffee-script": "~1.6.2",
+    "hooker": "~0.2.3"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.0",

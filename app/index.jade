@@ -208,7 +208,7 @@ block content
                       var a = Math.PI;
                     }
                     someSetup();
-                    console.log(a); //BOOM
+                    console.log(a); // BOOM!
             tr
               td
               td 
@@ -241,15 +241,17 @@ block content
               td
                 pre
                   code.referrorline2(data-language='javascript').
+                    "use strict";
                     var a = {x: 1, y: 2};
                     var x = 3;
-                    with (a) { //BOOM
+                    with (a) { // BOOM!
                       console.log(x);
                     }
             tr
               td
               td 
                 h4 Syntax Error
+                "Parse error"
 
     section(data-bespoke-state='coffee')
       .content 
