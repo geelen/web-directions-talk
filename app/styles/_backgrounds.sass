@@ -53,6 +53,8 @@ article
   &.success::before
     +filter(grayscale(0.5) brightness(0.8))
     background-image: url('http://www.thedisabledcubicle.com/wp-content/uploads/2012/11/apollorockygif1.gif')
+  &.no::before
+    background-image: url('http://stream1.gifsoup.com/view5/4253079/no-god-o.gif')
 
   // use ::after for images (full size, cover)
   &.confession::after
@@ -66,7 +68,7 @@ article
     background-image: url('http://yeoman.io/assets/img/yeoman-005.png')
   &.programming::after
     +filter(none)
-    opacity: 0.5
+    opacity: 0.7
     background-size: contain
     background-image: url('http://imgon.net/di-JMPP.gif')
 
@@ -77,3 +79,5 @@ article
       color: black
   &.programming
     background-color: white
+    section
+      color: black

@@ -108,12 +108,13 @@ section
     text-decoration: line-through
     color: #999
 
-  .byline
-    color: $darker-font
-    font-size: 1em
+  .byline, .row
     margin: 20px 0
     +display-box()
     +box-align(center)
+  .byline
+    font-size: 1em
+    color: $darker-font
     &::before, &::after
       content: ''
       display: block

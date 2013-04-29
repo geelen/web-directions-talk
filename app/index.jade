@@ -120,29 +120,31 @@ block content
 
     section(data-bespoke-state='code')
       .content
-        pre(data-bespoke-bullet)
-          code(data-language='javascript').
-            var a = Math.PI;
-            console.log(a);
-            // 3.14159...
-        pre(data-bespoke-bullet)
-          code(data-language='javascript').
-            var a = Math.PI
-            console.log(a)
-            // 3.14159...
-        pre(data-bespoke-bullet)
-          code(data-language='javascript').
-            a = Math.PI
-            console.log(a)
-            // 3.14159...
-        pre(data-bespoke-bullet)
-          code(data-language='javascript').
-            function someSetup() {
-              a = Math.PI;
-            }
-            someSetup();
-            console.log(a);
-            // 3.14159...
+        .row
+          pre
+            code(data-language='javascript').
+              var a = Math.PI;
+              console.log(a);
+              // 3.14159...
+          pre
+            code(data-language='javascript').
+              var a = Math.PI
+              console.log(a)
+              // 3.14159...
+        .row
+          pre
+            code(data-language='javascript').
+              a = Math.PI
+              console.log(a)
+              // 3.14159...
+          pre
+            code(data-language='javascript').
+              function someSetup() {
+                a = Math.PI;
+              }
+              someSetup();
+              console.log(a);
+              // 3.14159...
 
     section(data-bespoke-state='code')
       .content
@@ -166,7 +168,7 @@ block content
                     // 3.14159...
               td
                 pre
-                  code.referrorline2(data-language='javascript').
+                  code(data-language='javascript').
                     "use strict";
                     function someSetup() {
                       a = Math.PI; // BOOM!
@@ -202,7 +204,7 @@ block content
                     // 3.14159...
               td
                 pre
-                  code.referrorline2(data-language='javascript').
+                  code(data-language='javascript').
                     "use strict";
                     function someSetup() {
                       var a = Math.PI;
@@ -217,6 +219,23 @@ block content
 
     section(data-bespoke-state='yolo')
       .content
+
+    section(data-bespoke-state='')
+      .content 
+        .byline
+          .classy Strict mode:
+        h2 removes some 
+          strong  lols
+        .byline
+          .classy &amp;
+        h2 makes code 
+          strong  faster
+        .byline
+          .classy &amp;
+        h2 
+          strong changes 
+          |  important stuff
+        .unbrokenline
 
     section(data-bespoke-state='code')
       .content
@@ -240,7 +259,7 @@ block content
                     // 1
               td
                 pre
-                  code.referrorline2(data-language='javascript').
+                  code(data-language='javascript').
                     "use strict";
                     var a = {x: 1, y: 2};
                     var x = 3;
@@ -252,6 +271,38 @@ block content
               td 
                 h4 Syntax Error
                 "Parse error"
+
+    section(data-bespoke-state='code')
+      .content(data-bespoke-bullet)
+        h4 YOLO mode
+        pre
+          code(data-language='javascript').
+            var eval, arguments;
+            eval = 010;
+            if (arguments) {
+              function x() {};
+            }
+            delete eval;
+      .content(data-bespoke-bullet)
+        h4 Strict mode
+        pre
+          code(data-language='javascript').
+            "use strict";
+            var eval, arguments; //keywords BOOM
+            eval = 010; //octals BOOM
+            if (arguments) {
+              //function declaration in blocks BOOM
+              function x() {};
+            }
+            delete eval; //deleting locals BOOM
+        h4 Syntax Error
+        "Parse error"
+
+    section(data-bespoke-state='no')
+      .content 
+        .unbrokenline
+        h1 No more lols
+        .unbrokenline
 
     section(data-bespoke-state='coffee')
       .content 
