@@ -50,6 +50,9 @@ article
   &.yolo::before
     +filter(grayscale(0.5) brightness(0.8))
     background-image: url('http://24.media.tumblr.com/tumblr_m30nd7SIk41r34vqgo1_1280.gif')
+  &.success::before
+    +filter(grayscale(0.5) brightness(0.8))
+    background-image: url('http://www.thedisabledcubicle.com/wp-content/uploads/2012/11/apollorockygif1.gif')
 
   // use ::after for images (full size, cover)
   &.confession::after
@@ -63,6 +66,7 @@ article
     background-image: url('http://yeoman.io/assets/img/yeoman-005.png')
   &.programming::after
     +filter(none)
+    opacity: 0.5
     background-size: contain
     background-image: url('http://imgon.net/di-JMPP.gif')
 
