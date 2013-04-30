@@ -191,7 +191,7 @@ module.exports = function (grunt) {
     jade: {
       dist: {
         options: {
-          pretty: true
+          pretty: false
         },
         files: [{
           expand: true,
@@ -260,14 +260,30 @@ module.exports = function (grunt) {
       }
     },
     copy: {
-      jstotmp: {
+      halfass: {
         files: [{
           expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>',
-          dest: '.tmp',
+          dest: '<%= yeoman.dist %>',
           src: [
+            '*.{ico,txt}',
+            '.htaccess',
+            'components/**/*',
+            'images/*',
+            'styles/fonts/*',
+            'styles/*.css',
             'scripts/*.js'
+          ]
+        },{
+          expand: true,
+          dot: true,
+          cwd: '.tmp',
+          dest: '<%= yeoman.dist %>',
+          src: [
+            '*.html',
+            'styles/*',
+            'scripts/*'
           ]
         }]
       },
@@ -311,24 +327,31 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+//    'clean:dist',
+//    'jshint',
+//    'test',
+//    'coffee',
+//    'compass:dist',
+//    'jade',
+//    'useminPrepare',
+//    'imagemin',
+//    'cssmin',
+//    'htmlmin',
+//    'concat',
+//    'copy',
+////    'cdnify',
+//    'ngmin',
+//    'uglify',
+//    'rev',
+//    'usemin'
+//  ]);
+//
+//  grunt.registerTask('halfass', [
     'clean:dist',
-    'jshint',
-    'test',
     'coffee',
-    'copy:jstotmp',
     'compass:dist',
     'jade',
-    'useminPrepare',
-    'imagemin',
-    'cssmin',
-    'htmlmin',
-    'concat',
-    'copy',
-//    'cdnify',
-    'ngmin',
-    'uglify',
-    'rev',
-    'usemin'
+    'copy:halfass'
   ]);
 
   grunt.registerTask('default', ['build']);
