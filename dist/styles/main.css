@@ -91,58 +91,61 @@ article.yolo::before {
 }
 /* line 53, ../../app/styles/_backgrounds.sass */
 article.success::before {
-  -webkit-filter: grayscale(0.5) brightness(0.8);
-  -moz-filter: grayscale(0.5) brightness(0.8);
-  filter: grayscale(0.5) brightness(0.8);
+  -webkit-filter: grayscale(0.5) brightness(0.4);
+  -moz-filter: grayscale(0.5) brightness(0.4);
+  filter: grayscale(0.5) brightness(0.4);
   background-image: url("http://www.thedisabledcubicle.com/wp-content/uploads/2012/11/apollorockygif1.gif");
 }
 /* line 56, ../../app/styles/_backgrounds.sass */
 article.no::before {
   background-image: url("http://stream1.gifsoup.com/view5/4253079/no-god-o.gif");
 }
-/* line 60, ../../app/styles/_backgrounds.sass */
+/* line 58, ../../app/styles/_backgrounds.sass */
+article.serious::before {
+  -webkit-filter: grayscale(0.5) brightness(0.4);
+  -moz-filter: grayscale(0.5) brightness(0.4);
+  filter: grayscale(0.5) brightness(0.4);
+  background-image: url("http://24.media.tumblr.com/tumblr_lhhjisnv1x1qe0eclo1_r10_500.gif");
+}
+/* line 63, ../../app/styles/_backgrounds.sass */
 article.confession::after {
   background-image: url("http://i1.kym-cdn.com/photos/images/original/000/336/370/361.jpg");
 }
-/* line 62, ../../app/styles/_backgrounds.sass */
+/* line 65, ../../app/styles/_backgrounds.sass */
 article.ruby::after {
   background-image: url("../images/ruby-australia-logo.png");
 }
-/* line 64, ../../app/styles/_backgrounds.sass */
+/* line 67, ../../app/styles/_backgrounds.sass */
 article.love::after {
   background-image: url("../images/love_coloring.jpg");
 }
-/* line 66, ../../app/styles/_backgrounds.sass */
+/* line 69, ../../app/styles/_backgrounds.sass */
 article.yeoman::after {
   -webkit-filter: grayscale(0.6) contrast(0.9) brightness(0.3);
   -moz-filter: grayscale(0.6) contrast(0.9) brightness(0.3);
   filter: grayscale(0.6) contrast(0.9) brightness(0.3);
   background-image: url("http://yeoman.io/assets/img/yeoman-005.png");
 }
-/* line 69, ../../app/styles/_backgrounds.sass */
+/* line 72, ../../app/styles/_backgrounds.sass */
 article.programming::after {
   -webkit-filter: none;
   -moz-filter: none;
   filter: none;
-  opacity: 0.7;
   background-size: contain;
   background-image: url("http://imgon.net/di-JMPP.gif");
 }
-/* line 76, ../../app/styles/_backgrounds.sass */
+/* line 78, ../../app/styles/_backgrounds.sass */
 article.code {
   background-color: #fbeecb;
 }
-/* line 78, ../../app/styles/_backgrounds.sass */
+/* line 80, ../../app/styles/_backgrounds.sass */
 article.code section {
   color: black;
 }
-/* line 80, ../../app/styles/_backgrounds.sass */
+/* line 82, ../../app/styles/_backgrounds.sass */
 article.programming {
   background-color: white;
-}
-/* line 82, ../../app/styles/_backgrounds.sass */
-article.programming section {
-  color: black;
+  opacity: 0.95;
 }
 
 /* line 8, ../../app/styles/main.sass */
