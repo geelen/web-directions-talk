@@ -303,6 +303,54 @@ block content
                 h4 Syntax Error
                 "Parse error"
 
+    section(data-bespoke-state='code')
+      .content
+        table
+          thead
+            tr
+              td
+                h3 YOLO mode
+              td
+                h3 Strict mode
+          tbody
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    function y() {
+                      var me = arguments.callee;
+                      return me.name +
+                             " <- " +
+                             me.caller.name;
+                    };
+                    function x() {
+                      return y();
+                    }
+                    console.log(x());
+                    // "y <- x"
+              td
+                pre
+                  code(data-language='javascript').
+                    "use strict";
+                    function y() { // BOOM ☟
+                      var me = arguments.callee;
+                      return me.name +
+                             " <- " +
+                             me.caller.name;
+                    };
+                    function x() {
+                      return y();
+                    }
+                    console.log(x());
+            tr
+              td
+                em Note: Function.caller can do
+                  br
+                  | most of the same things anyway
+              td
+                h4 Type Error
+                "Unable to access callee of strict mode function"
+
     section(data-bespoke-state='coffee')
       .content
         h2
