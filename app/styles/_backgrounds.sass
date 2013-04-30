@@ -51,10 +51,13 @@ article
     +filter(grayscale(0.5) brightness(0.8))
     background-image: url('http://24.media.tumblr.com/tumblr_m30nd7SIk41r34vqgo1_1280.gif')
   &.success::before
-    +filter(grayscale(0.5) brightness(0.8))
+    +filter(grayscale(0.5) brightness(0.4))
     background-image: url('http://www.thedisabledcubicle.com/wp-content/uploads/2012/11/apollorockygif1.gif')
   &.no::before
     background-image: url('http://stream1.gifsoup.com/view5/4253079/no-god-o.gif')
+  &.serious::before
+    +filter(grayscale(0.5) brightness(0.4))
+    background-image: url('http://24.media.tumblr.com/tumblr_lhhjisnv1x1qe0eclo1_r10_500.gif')
 
   // use ::after for images (full size, cover)
   &.confession::after

@@ -8,8 +8,8 @@ block content
           .classy This talk is called:
         h1
           | Javascript's
-          strong Slightly
-          | Stricter Mode
+          strong  Slightly
+          |  Stricter Mode
         .byline
           .classy with this guy:
         .me
@@ -252,9 +252,9 @@ block content
         pre
           code(data-language='javascript').
             "use strict";
-            var eval, arguments;        //keywords BOOM
-            eval = 010;                 //octals BOOM
-            delete eval;                //deleting locals BOOM
+            var eval, arguments;        // keywords BOOM
+            eval = 010;                 // octals BOOM
+            delete eval;                // deleting locals BOOM
             arguments = {x: 1, x: eval} // duplicate key BOOM
             function y(a, a) {          // duplicate argument BOOM
               return a;
@@ -351,6 +351,174 @@ block content
                 h4 Type Error
                 "Unable to access callee of strict mode function"
 
+    section(data-bespoke-state='serious')
+      .content
+        .unbrokenline
+        h2
+          strong Serious time
+        .unbrokenline
+
+    section
+      .content
+        .byline
+          .classy Strict mode:
+        h2 changes
+          strong  semantics
+        .byline
+          .classy which means
+        h2 existing code
+        .byline
+          .classy can
+        h2
+          strong break
+        .unbrokenline
+
+    section(data-bespoke-state='code')
+      .content(data-bespoke-bullet)
+        h2 .call vs () - YOLO mode
+        pre
+          code(data-language='javascript').
+            function x(a) { this.a = a; };
+
+            // Calling a function:
+            x("foo");
+            // is equivalent to:
+            x.call(window, foo);
+            // so window.a = "foo";
+      .content(data-bespoke-bullet)
+        h2 .call vs () - Strict mode
+        pre
+          code(data-language='javascript').
+            "use strict";
+            function x(a) { this.a = a; };
+
+            // Calling a function:
+            x("foo");
+            // is equivalent to:
+            x.call(undefined, foo);
+            // so this explodes
+
+    section(data-bespoke-state='code')
+      .content
+        table
+          tbody
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    var whatIsThis;
+                    (function() {
+                      whatIsThis = function() {
+                        return this;
+                      };
+                    })();
+                    var thisWas = (function() {
+                      "use strict";
+                      console.log(whatIsThis());
+                    })();
+                    // window
+              td
+                pre
+                  code(data-language='javascript').
+                    "use strict";
+                    var whatIsThis;
+                    (function() {
+                      whatIsThis = function() {
+                        return this;
+                      };
+                    })();
+                    var thisWas = (function() {
+                      console.log(whatIsThis());
+                    })();
+                    // undefined
+            tr
+              td
+                h4 Strict Mode invocation
+                  br
+                  | of YOLO function
+              td
+                h4 Strict Mode declaration
+                  br
+                  | and invocation
+
+    section
+      .content
+        h2 Javascript code
+        .byline
+          .classy that
+        h2 was written YOLO
+        .byline
+          .classy may well
+        h2
+          strong break
+          |  if interpreted as strict.
+
+    section(data-bespoke-state='code')
+      .content
+        table
+          thead
+            tr
+              td(colspan=2)
+                h2 Concatenation
+          tbody
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    // your code
+                    "use strict";
+                    (function() {
+                      // do some rad stuff
+                    })();
+
+                    // concatenate other files
+                    jQuery.lolol...
+              td
+                pre
+                  code(data-language='javascript').
+                    // your code
+                    (function() {
+                      "use strict";
+                      // do some rad stuff
+                    })();
+
+                    // concatenate other files
+                    jQuery.lolol...
+            tr
+              td
+                h4 Other code interpreted
+                  br
+                  | as Strict &nbsp;✖
+              td
+                h4 Your code strict &nbsp;✔
+                  br
+                  | Other code unchanged &nbsp;✔
+
+    section(data-bespoke-state='tldr')
+      .content
+        .byline
+          .classy TL;DR:
+        h1 Wrap
+          strong  every file
+        .byline
+          .classy inside an
+        h1
+          strong IIFE
+        .byline
+          .classy with
+        h1
+          strong Strict Mode
+          |  enabled
+        .unbrokenline
+      pre
+        code(data-language='javascript').
+          (function() {
+            "use strict";
+
+            // go bananas.
+
+          })();
+
     section(data-bespoke-state='coffee')
       .content
         h2
@@ -360,19 +528,9 @@ block content
         h2 but it helps to
           strong  know Javascript first
 
-    section(data-bespoke-state='tldr')
-      .content
-        .byline
-          .classy TL;DR:
-        h1 Use
-          strong  Strict Mode
-          |  inside an
-          strong  IIFE
-        .unbrokenline
-
-    section(data-bespoke-state='love')
+    section(data-bespoke-state='success')
       .content
         .unbrokenline
-        h1 I love the Web
-        .byline
-          .classy ...but I still don't 'know' JS.
+        h1
+          strong Thank You!
+        .unbrokenline
