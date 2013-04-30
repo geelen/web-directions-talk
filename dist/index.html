@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="styles/d41d8cd9.main.css">
+a = "foo"</code></pre><pre><code data-language="coffee"># cahfee.coffee
+a = "foo"</code></pre><pre><code data-language="javascript">//lolscript.js
+var a = "foo";
+</code></pre></div></section><section data-bespoke-state="code"><div class="content"><div class="row"><pre><code data-language="javascript">var a = Math.PI;
+console.log(a);
+// 3.14159...</code></pre><pre><code data-language="javascript">var a = Math.PI
+console.log(a)
+// 3.14159...</code></pre></div><div class="row"><pre><code data-language="javascript">a = Math.PI
+console.log(a)
+// 3.14159...</code></pre><pre><code data-language="javascript">function someSetup() {
+  a = Math.PI;
+}
+someSetup();
+console.log(a);
+// 3.14159...
+</code></pre></div></div></section><section data-bespoke-state="code"><div class="content"><table><thead><tr><td> <h4>Non-strict mode</h4></td><td> <h4>Strict mode</h4></td></tr></thead><tbody><tr><td><pre><code data-language="javascript">function someSetup() {
+  a = Math.PI;
+}
+someSetup();
+console.log(a);
+// 3.14159...</code></pre></td><td><pre><code data-language="javascript">"use strict";
+function someSetup() {
+  a = Math.PI; // BOOM!
+}
+someSetup();
+console.log(a);</code></pre></td></tr><tr><td></td><td> <h4>throws ReferenceError</h4>"Strict mode forbids implicit creation of global property 'a'"</td></tr></tbody></table></div></section><section data-bespoke-state="code"><div class="content nofade"><table><thead><tr><td> <h4 data-bespoke-bullet="">Non-strict mode</h4><h4 data-bespoke-bullet="">YOLO mode</h4></td><td> <h4>Strict mode</h4></td></tr></thead><tbody><tr><td><pre><code data-language="javascript">function someSetup() {
+  a = Math.PI;
+}
+someSetup();
+console.log(a);
+// 3.14159...</code></pre></td><td><pre><code data-language="javascript">"use strict";
+function someSetup() {
+  var a = Math.PI;
+}
+someSetup();
+console.log(a); // BOOM!</code></pre></td></tr><tr><td></td><td> <h4>throws ReferenceError</h4>"Can't find variable: a"</td></tr></tbody></table></div></section><section data-bespoke-state="yolo"><div class="content"></div></section><section data-bespoke-state=""><div class="content"> <div class="byline"><div class="classy">Strict mode:</div></div><h2>removes some <strong> lols</strong></h2><div class="byline"><div class="classy">&amp;</div></div><h2>makes code <strong> faster</strong></h2><div class="byline"><div class="classy">&amp;</div></div><h2> <strong>changes </strong> important stuff</h2><div class="unbrokenline"></div></div></section><section data-bespoke-state="code"><div class="content"><table><thead><tr><td> <h4>YOLO mode</h4></td><td> <h4>Strict mode</h4></td></tr></thead><tbody><tr><td><pre><code data-language="javascript">var a = {x: 1, y: 2};
+var x = 3;
+with (a) {
+  console.log(x);
+}
+// 1</code></pre></td><td><pre><code data-language="javascript">"use strict";
+var a = {x: 1, y: 2};
+var x = 3;
+with (a) { // BOOM!
+  console.log(x);
+}</code></pre></td></tr><tr><td></td><td> <h4>Syntax Error</h4>"Parse error"</td></tr></tbody></table></div></section><section data-bespoke-state="code"><div data-bespoke-bullet="" class="content"><h4>YOLO mode</h4><pre><code data-language="javascript">var eval, arguments;
+eval = 010;
+if (arguments) {
+  function x() {};
+}
+delete eval;</code></pre></div><div data-bespoke-bullet="" class="content"><h4>Strict mode</h4><pre><code data-language="javascript">"use strict";
+var eval, arguments; //keywords BOOM
+eval = 010; //octals BOOM
+if (arguments) {
+  //function declaration in blocks BOOM
+  function x() {};
+}
+<script src="scripts/d41d8cd9.scripts.js"></script>
+  var config = {
+    kitId: 'rgz7pbt',
+    scriptTimeout: 3000
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+</script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));</script></body></html>
