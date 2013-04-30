@@ -239,26 +239,34 @@ block content
           code(data-language='javascript').
             var eval, arguments;
             eval = 010;
-            if (arguments) {
-              function x() {};
-            }
             delete eval;
-            console.log(eval);
+            arguments = {x: 1, x: eval}
+            function y(a, a) {
+              return a;
+            }
+            console.log(y(null, arguments.x));
             // 8
+
       .content(data-bespoke-bullet)
         h3 Strict mode
         pre
           code(data-language='javascript').
             "use strict";
-            var eval, arguments; //keywords BOOM
-            eval = 010; //octals BOOM
-            if (arguments) {
-              //function declaration in blocks BOOM
-              function x() {};
+            var eval, arguments;        //keywords BOOM
+            eval = 010;                 //octals BOOM
+            delete eval;                //deleting locals BOOM
+            arguments = {x: 1, x: eval} // duplicate key BOOM
+            function y(a, a) {          // duplicate argument BOOM
+              return a;
             }
-            delete eval; //deleting locals BOOM
         h4 Syntax Error
         "Parse error"
+
+    section(data-bespoke-state='no')
+      .content
+        .unbrokenline
+        h1 No more lols
+        .unbrokenline
 
     section(data-bespoke-state='code')
       .content
@@ -294,12 +302,6 @@ block content
               td
                 h4 Syntax Error
                 "Parse error"
-
-    section(data-bespoke-state='no')
-      .content
-        .unbrokenline
-        h1 No more lols
-        .unbrokenline
 
     section(data-bespoke-state='coffee')
       .content
