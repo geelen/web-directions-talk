@@ -7,8 +7,8 @@ block content
         .byline
           .classy This talk is called:
         h1
-          | Javascript's 
-          strong Slightly 
+          | Javascript's
+          strong Slightly
           | Stricter Mode
         .byline
           .classy with this guy:
@@ -19,31 +19,31 @@ block content
           a(href='http://github.com/geelen') geelen
 
     section(data-bespoke-state='confession')
-      .content 
+      .content
         .byline
           .classy Firstly:
         h1 A confession
         .unbrokenline
 
     section(data-bespoke-state='confession')
-      .content 
+      .content
         .unbrokenline
         h1 I am not really a Javascript developer
         .unbrokenline
 
     section(data-bespoke-state='goodfilms')
-      .content 
+      .content
         .byline
           .classy When I built
-        h1 
+        h1
           strong Goodfilms
         .unbrokenline
 
     section(data-bespoke-state='coffee')
-      .content 
+      .content
         .byline
           .classy I used
-        h1 
+        h1
           strong Coffeescript
         .byline
           .classy and still do.
@@ -51,29 +51,24 @@ block content
     section(data-bespoke-state='programming')
 
     section(data-bespoke-state='code')
-      .content 
-        pre
+      .content
+        h1 When did I start using it?
+        pre(style='display: inline-block;')
           code.rainbow(data-language='javascript')
             span.string "use strict"
             | ;
 
     section(data-bespoke-state='yeoman')
-      .content 
+      .content
         .unbrokenline
         h1
           strong Yeoman
+          |  generated it for me.
         .byline
-          .classy is awesome.
-
-    section(data-bespoke-state='code')
-      .content 
-        pre
-          code.rainbow(data-language='javascript')
-            span.string "use strict"
-            | ;
+          .classy of course!
 
     section(data-bespoke-state='')
-      .content 
+      .content
         h2 This talk is now:
         .byline
           .classy Things
@@ -90,7 +85,7 @@ block content
           strong strict mode
 
     section(data-bespoke-state='')
-      .content 
+      .content
         .byline
           .classy Or,
         h2 Bugs
@@ -104,7 +99,7 @@ block content
         .unbrokenline
 
     section(data-bespoke-state='code')
-      .content 
+      .content
         pre
           code(data-language='ruby').
             # rubby.rb
@@ -151,10 +146,10 @@ block content
         table
           thead
             tr
-              td 
-                h4 Non-strict mode
-              td 
-                h4 Strict mode
+              td
+                h3 Non-strict mode
+              td
+                h3 Strict mode
           tbody
             tr
               td
@@ -177,7 +172,7 @@ block content
                     console.log(a);
             tr
               td
-              td 
+              td
                 h4 throws ReferenceError
                 "Strict mode forbids implicit creation of global property 'a'"
 
@@ -186,11 +181,11 @@ block content
         table
           thead
             tr
-              td 
-                h4(data-bespoke-bullet) Non-strict mode
-                h4(data-bespoke-bullet) YOLO mode
-              td 
-                h4 Strict mode
+              td
+                h3(data-bespoke-bullet) Non-strict mode
+                h3(data-bespoke-bullet) YOLO mode
+              td
+                h3 Strict mode
           tbody
             tr
               td
@@ -213,7 +208,7 @@ block content
                     console.log(a); // BOOM!
             tr
               td
-              td 
+              td
                 h4 throws ReferenceError
                 "Can't find variable: a"
 
@@ -221,31 +216,59 @@ block content
       .content
 
     section(data-bespoke-state='')
-      .content 
+      .content
         .byline
           .classy Strict mode:
-        h2 removes some 
+        h2 removes some
           strong  lols
         .byline
           .classy &amp;
-        h2 makes code 
+        h2 makes code
           strong  faster
         .byline
           .classy &amp;
-        h2 
-          strong changes 
+        h2
+          strong changes
           |  important stuff
         .unbrokenline
+
+    section(data-bespoke-state='code')
+      .content(data-bespoke-bullet)
+        h3 YOLO mode
+        pre
+          code(data-language='javascript').
+            var eval, arguments;
+            eval = 010;
+            if (arguments) {
+              function x() {};
+            }
+            delete eval;
+            console.log(eval);
+            // 8
+      .content(data-bespoke-bullet)
+        h3 Strict mode
+        pre
+          code(data-language='javascript').
+            "use strict";
+            var eval, arguments; //keywords BOOM
+            eval = 010; //octals BOOM
+            if (arguments) {
+              //function declaration in blocks BOOM
+              function x() {};
+            }
+            delete eval; //deleting locals BOOM
+        h4 Syntax Error
+        "Parse error"
 
     section(data-bespoke-state='code')
       .content
         table
           thead
             tr
-              td 
-                h4 YOLO mode
-              td 
-                h4 Strict mode
+              td
+                h3 YOLO mode
+              td
+                h3 Strict mode
           tbody
             tr
               td
@@ -268,44 +291,18 @@ block content
                     }
             tr
               td
-              td 
+              td
                 h4 Syntax Error
                 "Parse error"
 
-    section(data-bespoke-state='code')
-      .content(data-bespoke-bullet)
-        h4 YOLO mode
-        pre
-          code(data-language='javascript').
-            var eval, arguments;
-            eval = 010;
-            if (arguments) {
-              function x() {};
-            }
-            delete eval;
-      .content(data-bespoke-bullet)
-        h4 Strict mode
-        pre
-          code(data-language='javascript').
-            "use strict";
-            var eval, arguments; //keywords BOOM
-            eval = 010; //octals BOOM
-            if (arguments) {
-              //function declaration in blocks BOOM
-              function x() {};
-            }
-            delete eval; //deleting locals BOOM
-        h4 Syntax Error
-        "Parse error"
-
     section(data-bespoke-state='no')
-      .content 
+      .content
         .unbrokenline
         h1 No more lols
         .unbrokenline
 
     section(data-bespoke-state='coffee')
-      .content 
+      .content
         h2
           strong CoffeeScript
           |  is awesome.
@@ -314,7 +311,7 @@ block content
           strong  know Javascript first
 
     section(data-bespoke-state='tldr')
-      .content 
+      .content
         .byline
           .classy TL;DR:
         h1 Use
@@ -324,7 +321,7 @@ block content
         .unbrokenline
 
     section(data-bespoke-state='love')
-      .content 
+      .content
         .unbrokenline
         h1 I love the Web
         .byline
