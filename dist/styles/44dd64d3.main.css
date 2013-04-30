@@ -1,0 +1,469 @@
+/* line 2, ../../app/styles/_backgrounds.sass */
+article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 8, ../../app/styles/_backgrounds.sass */
+article::before, article::after {
+  display: block;
+  position: absolute;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: "";
+  -webkit-filter: grayscale(0.3) brightness(0.3);
+  -moz-filter: grayscale(0.3) brightness(0.3);
+  filter: grayscale(0.3) brightness(0.3);
+}
+/* line 16, ../../app/styles/_backgrounds.sass */
+article::before {
+  z-index: 1;
+  width: 20%;
+  height: 20%;
+  top: 50%;
+  left: 50%;
+  margin-top: -5%;
+  margin-left: -10%;
+  -webkit-transform: scale(5.5);
+  -moz-transform: scale(5.5);
+  -ms-transform: scale(5.5);
+  -o-transform: scale(5.5);
+  transform: scale(5.5);
+}
+/* line 25, ../../app/styles/_backgrounds.sass */
+article::after {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 33, ../../app/styles/_backgrounds.sass */
+article.waves::before {
+  -webkit-transform: scale(6.5);
+  -moz-transform: scale(6.5);
+  -ms-transform: scale(6.5);
+  -o-transform: scale(6.5);
+  transform: scale(6.5);
+  -webkit-filter: blur(1px) grayscale(0.3) brightness(0.4);
+  -moz-filter: blur(1px) grayscale(0.3) brightness(0.4);
+  filter: blur(1px) grayscale(0.3) brightness(0.4);
+  background-image: url("http://stream1.gifsoup.com/view/609536/beach-waves-o.gif");
+}
+/* line 37, ../../app/styles/_backgrounds.sass */
+article.chuck::before {
+  background-image: url("http://holykkphils.files.wordpress.com/2011/06/chuck-norris-approved.gif");
+}
+/* line 39, ../../app/styles/_backgrounds.sass */
+article.approve::before {
+  background-image: url("http://boards.420chan.org/pol/src/1366522404633.gif");
+}
+/* line 41, ../../app/styles/_backgrounds.sass */
+article.goodfilms::before {
+  -webkit-filter: grayscale(0.3) brightness(0.4);
+  -moz-filter: grayscale(0.3) brightness(0.4);
+  filter: grayscale(0.3) brightness(0.4);
+  background-image: url("http://24.media.tumblr.com/tumblr_lgb02mCfLm1qe0eclo1_r5_500.gif");
+}
+/* line 44, ../../app/styles/_backgrounds.sass */
+article.coffee::before {
+  -webkit-filter: grayscale(0.3) brightness(0.4);
+  -moz-filter: grayscale(0.3) brightness(0.4);
+  filter: grayscale(0.3) brightness(0.4);
+  background-image: url("http://24.media.tumblr.com/tumblr_lzvxa27m6M1r2gn3bo1_400.gif");
+}
+/* line 47, ../../app/styles/_backgrounds.sass */
+article.tldr::before {
+  -webkit-filter: grayscale(0.5) brightness(0.2);
+  -moz-filter: grayscale(0.5) brightness(0.2);
+  filter: grayscale(0.5) brightness(0.2);
+  background-image: url("http://i0.kym-cdn.com/photos/images/newsfeed/000/154/912/berneydidnotread.gif?1318992465");
+}
+/* line 50, ../../app/styles/_backgrounds.sass */
+article.yolo::before {
+  -webkit-filter: grayscale(0.5) brightness(0.8);
+  -moz-filter: grayscale(0.5) brightness(0.8);
+  filter: grayscale(0.5) brightness(0.8);
+  background-image: url("http://24.media.tumblr.com/tumblr_m30nd7SIk41r34vqgo1_1280.gif");
+}
+/* line 53, ../../app/styles/_backgrounds.sass */
+article.success::before {
+  -webkit-filter: grayscale(0.5) brightness(0.8);
+  -moz-filter: grayscale(0.5) brightness(0.8);
+  filter: grayscale(0.5) brightness(0.8);
+  background-image: url("http://www.thedisabledcubicle.com/wp-content/uploads/2012/11/apollorockygif1.gif");
+}
+/* line 56, ../../app/styles/_backgrounds.sass */
+article.no::before {
+  background-image: url("http://stream1.gifsoup.com/view5/4253079/no-god-o.gif");
+}
+/* line 60, ../../app/styles/_backgrounds.sass */
+article.confession::after {
+  background-image: url("http://i1.kym-cdn.com/photos/images/original/000/336/370/361.jpg");
+}
+/* line 62, ../../app/styles/_backgrounds.sass */
+article.ruby::after {
+  background-image: url("/images/e87e2252.ruby-australia-logo.png");
+}
+/* line 64, ../../app/styles/_backgrounds.sass */
+article.love::after {
+  background-image: url("/images/4cafddaa.love_coloring.jpg");
+}
+/* line 66, ../../app/styles/_backgrounds.sass */
+article.yeoman::after {
+  -webkit-filter: grayscale(0.6) contrast(0.9) brightness(0.3);
+  -moz-filter: grayscale(0.6) contrast(0.9) brightness(0.3);
+  filter: grayscale(0.6) contrast(0.9) brightness(0.3);
+  background-image: url("http://yeoman.io/assets/img/yeoman-005.png");
+}
+/* line 69, ../../app/styles/_backgrounds.sass */
+article.programming::after {
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+  opacity: 0.7;
+  background-size: contain;
+  background-image: url("http://imgon.net/di-JMPP.gif");
+}
+/* line 76, ../../app/styles/_backgrounds.sass */
+article.code {
+  background-color: #fbeecb;
+}
+/* line 78, ../../app/styles/_backgrounds.sass */
+article.code section {
+  color: black;
+}
+/* line 80, ../../app/styles/_backgrounds.sass */
+article.programming {
+  background-color: white;
+}
+/* line 82, ../../app/styles/_backgrounds.sass */
+article.programming section {
+  color: black;
+}
+
+/* line 8, ../../app/styles/main.sass */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+/* line 15, ../../app/styles/main.sass */
+html .content {
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+/* line 19, ../../app/styles/main.sass */
+html.wf-loading .content {
+  opacity: 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+/* line 23, ../../app/styles/main.sass */
+a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+  border-bottom: 1px solid #595959;
+}
+/* line 28, ../../app/styles/main.sass */
+a:hover {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 1;
+  border-bottom-color: inherit;
+}
+
+/* line 33, ../../app/styles/main.sass */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 37, ../../app/styles/main.sass */
+body {
+  background: #111111;
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 400;
+  color: white;
+  overflow: hidden;
+}
+
+/* line 44, ../../app/styles/main.sass */
+.bespoke-slide {
+  z-index: 2;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-box-pack: center;
+  box-pack: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 54, ../../app/styles/main.sass */
+.bespoke-inactive {
+  display: none;
+}
+
+/* line 57, ../../app/styles/main.sass */
+.bespoke-after-1 {
+  z-index: -1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  opacity: 0;
+}
+/* line 61, ../../app/styles/main.sass */
+.bespoke-after-1 .content > * {
+  opacity: 0;
+}
+/* line 63, ../../app/styles/main.sass */
+.bespoke-after-1 .content.nofade > * {
+  opacity: 1;
+}
+
+/* line 66, ../../app/styles/main.sass */
+.bespoke-active {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  opacity: 1;
+}
+/* line 69, ../../app/styles/main.sass */
+.bespoke-active .content > * {
+  opacity: 1;
+}
+/* line 73, ../../app/styles/main.sass */
+.bespoke-active .content > *:nth-child(1) {
+  -webkit-transition: opacity 0.5s linear;
+  -webkit-transition-delay: 0s;
+  -moz-transition: opacity 0.5s linear 0s;
+  -o-transition: opacity 0.5s linear 0s;
+  transition: opacity 0.5s linear 0s;
+}
+/* line 73, ../../app/styles/main.sass */
+.bespoke-active .content > *:nth-child(2) {
+  -webkit-transition: opacity 0.5s linear;
+  -webkit-transition-delay: 0.3s;
+  -moz-transition: opacity 0.5s linear 0.3s;
+  -o-transition: opacity 0.5s linear 0.3s;
+  transition: opacity 0.5s linear 0.3s;
+}
+/* line 73, ../../app/styles/main.sass */
+.bespoke-active .content > *:nth-child(3) {
+  -webkit-transition: opacity 0.5s linear;
+  -webkit-transition-delay: 0.6s;
+  -moz-transition: opacity 0.5s linear 0.6s;
+  -o-transition: opacity 0.5s linear 0.6s;
+  transition: opacity 0.5s linear 0.6s;
+}
+/* line 73, ../../app/styles/main.sass */
+.bespoke-active .content > *:nth-child(4) {
+  -webkit-transition: opacity 0.5s linear;
+  -webkit-transition-delay: 0.9s;
+  -moz-transition: opacity 0.5s linear 0.9s;
+  -o-transition: opacity 0.5s linear 0.9s;
+  transition: opacity 0.5s linear 0.9s;
+}
+/* line 73, ../../app/styles/main.sass */
+.bespoke-active .content > *:nth-child(5) {
+  -webkit-transition: opacity 0.5s linear;
+  -webkit-transition-delay: 1.2s;
+  -moz-transition: opacity 0.5s linear 1.2s;
+  -o-transition: opacity 0.5s linear 1.2s;
+  transition: opacity 0.5s linear 1.2s;
+}
+/* line 73, ../../app/styles/main.sass */
+.bespoke-active .content > *:nth-child(6) {
+  -webkit-transition: opacity 0.5s linear;
+  -webkit-transition-delay: 1.5s;
+  -moz-transition: opacity 0.5s linear 1.5s;
+  -o-transition: opacity 0.5s linear 1.5s;
+  transition: opacity 0.5s linear 1.5s;
+}
+/* line 73, ../../app/styles/main.sass */
+.bespoke-active .content > *:nth-child(7) {
+  -webkit-transition: opacity 0.5s linear;
+  -webkit-transition-delay: 1.8s;
+  -moz-transition: opacity 0.5s linear 1.8s;
+  -o-transition: opacity 0.5s linear 1.8s;
+  transition: opacity 0.5s linear 1.8s;
+}
+/* line 73, ../../app/styles/main.sass */
+.bespoke-active .content > *:nth-child(8) {
+  -webkit-transition: opacity 0.5s linear;
+  -webkit-transition-delay: 2.1s;
+  -moz-transition: opacity 0.5s linear 2.1s;
+  -o-transition: opacity 0.5s linear 2.1s;
+  transition: opacity 0.5s linear 2.1s;
+}
+/* line 73, ../../app/styles/main.sass */
+.bespoke-active .content > *:nth-child(9) {
+  -webkit-transition: opacity 0.5s linear;
+  -webkit-transition-delay: 2.4s;
+  -moz-transition: opacity 0.5s linear 2.4s;
+  -o-transition: opacity 0.5s linear 2.4s;
+  transition: opacity 0.5s linear 2.4s;
+}
+/* line 73, ../../app/styles/main.sass */
+.bespoke-active .content > *:nth-child(10) {
+  -webkit-transition: opacity 0.5s linear;
+  -webkit-transition-delay: 2.7s;
+  -moz-transition: opacity 0.5s linear 2.7s;
+  -o-transition: opacity 0.5s linear 2.7s;
+  transition: opacity 0.5s linear 2.7s;
+}
+
+/* line 76, ../../app/styles/main.sass */
+section {
+  color: #f2f2f2;
+  text-align: center;
+}
+/* line 80, ../../app/styles/main.sass */
+section .content {
+  padding: 1em;
+  word-break: break-word;
+}
+/* line 84, ../../app/styles/main.sass */
+section h1 {
+  font-size: 3em;
+  font-weight: 300;
+  margin: 0;
+}
+/* line 89, ../../app/styles/main.sass */
+section h2 {
+  font-size: 3em;
+  font-weight: 300;
+  margin: 0;
+}
+/* line 94, ../../app/styles/main.sass */
+section h3 {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0;
+}
+/* line 99, ../../app/styles/main.sass */
+section h4 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+/* line 104, ../../app/styles/main.sass */
+section .underline {
+  border-bottom: 0.1em solid white;
+}
+/* line 107, ../../app/styles/main.sass */
+section .strikethrough {
+  text-decoration: line-through;
+  color: #999999;
+}
+/* line 111, ../../app/styles/main.sass */
+section .byline, section .row {
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+}
+/* line 115, ../../app/styles/main.sass */
+section .byline {
+  font-size: 1em;
+  color: #a6a6a6;
+}
+/* line 118, ../../app/styles/main.sass */
+section .byline::before, section .byline::after {
+  content: "";
+  display: block;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  height: 0;
+  padding-top: 1px;
+  border-bottom: 1px dotted #595959;
+}
+/* line 125, ../../app/styles/main.sass */
+section .byline > * {
+  margin-right: 20px;
+}
+/* line 127, ../../app/styles/main.sass */
+section .byline > *:first-child {
+  margin-left: 20px;
+}
+/* line 130, ../../app/styles/main.sass */
+section .unbrokenline {
+  border-bottom: 1px dotted #595959;
+  margin: 30px 0 30px;
+}
+/* line 134, ../../app/styles/main.sass */
+section .classy {
+  font-size: 1.2em;
+  font-family: kepler-std, Georgia, serif;
+  font-weight: 300;
+  font-style: italic;
+}
+/* line 140, ../../app/styles/main.sass */
+section .me {
+  margin: 10px auto;
+  width: 80px;
+  height: 80px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  background-image: url("/images/261c4b69.me_720.png");
+  background-size: 120px;
+  background-position: -20px -30px;
+}
+
+/* line 149, ../../app/styles/main.sass */
+pre, code {
+  font-family: source-code-pro, "Monaco", courier, monospace;
+  font-size: 1.2em;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* line 155, ../../app/styles/main.sass */
+pre {
+  position: relative;
+  box-shadow: 0 0 1px 0 black, 0 0 0px 8px white, 0 0 0px 9px rgba(0, 0, 0, 0.1), 10px 10px 20px 3px rgba(0, 0, 0, 0.2), -10px 10px 20px 3px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+}
+
+/* line 160, ../../app/styles/main.sass */
+.bespoke-bullet {
+  display: none;
+}
+/* line 162, ../../app/styles/main.sass */
+.bespoke-bullet.bespoke-bullet-last-active {
+  display: block;
+}

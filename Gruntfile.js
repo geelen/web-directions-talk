@@ -99,7 +99,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js'
+        '<%= yeoman.app %>/scripts/app.js'
       ]
     },
     karma: {
@@ -191,7 +191,7 @@ module.exports = function (grunt) {
     jade: {
       dist: {
         options: {
-          pretty: false
+          pretty: true
         },
         files: [{
           expand: true,
@@ -260,6 +260,17 @@ module.exports = function (grunt) {
       }
     },
     copy: {
+      jstotmp: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '.tmp',
+          src: [
+            'scripts/*.js'
+          ]
+        }]
+      },
       dist: {
         files: [{
           expand: true,
@@ -301,9 +312,10 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-//    'jshint',
+    'jshint',
     'test',
     'coffee',
+    'copy:jstotmp',
     'compass:dist',
     'jade',
     'useminPrepare',

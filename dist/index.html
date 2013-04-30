@@ -1,69 +1,395 @@
-<link rel="stylesheet" href="styles/d41d8cd9.main.css">
-a = "foo"</code></pre><pre><code data-language="coffee"># cahfee.coffee
-a = "foo"</code></pre><pre><code data-language="javascript">//lolscript.js
-var a = "foo";
-</code></pre></div></section><section data-bespoke-state="code"><div class="content"><div class="row"><pre><code data-language="javascript">var a = Math.PI;
-console.log(a);
-// 3.14159...</code></pre><pre><code data-language="javascript">var a = Math.PI
-console.log(a)
-// 3.14159...</code></pre></div><div class="row"><pre><code data-language="javascript">a = Math.PI
-console.log(a)
-// 3.14159...</code></pre><pre><code data-language="javascript">function someSetup() {
-  a = Math.PI;
-}
-someSetup();
-console.log(a);
-// 3.14159...
-</code></pre></div></div></section><section data-bespoke-state="code"><div class="content"><table><thead><tr><td> <h4>Non-strict mode</h4></td><td> <h4>Strict mode</h4></td></tr></thead><tbody><tr><td><pre><code data-language="javascript">function someSetup() {
-  a = Math.PI;
-}
-someSetup();
-console.log(a);
-// 3.14159...</code></pre></td><td><pre><code data-language="javascript">"use strict";
-function someSetup() {
-  a = Math.PI; // BOOM!
-}
-someSetup();
-console.log(a);</code></pre></td></tr><tr><td></td><td> <h4>throws ReferenceError</h4>"Strict mode forbids implicit creation of global property 'a'"</td></tr></tbody></table></div></section><section data-bespoke-state="code"><div class="content nofade"><table><thead><tr><td> <h4 data-bespoke-bullet="">Non-strict mode</h4><h4 data-bespoke-bullet="">YOLO mode</h4></td><td> <h4>Strict mode</h4></td></tr></thead><tbody><tr><td><pre><code data-language="javascript">function someSetup() {
-  a = Math.PI;
-}
-someSetup();
-console.log(a);
-// 3.14159...</code></pre></td><td><pre><code data-language="javascript">"use strict";
-function someSetup() {
-  var a = Math.PI;
-}
-someSetup();
-console.log(a); // BOOM!</code></pre></td></tr><tr><td></td><td> <h4>throws ReferenceError</h4>"Can't find variable: a"</td></tr></tbody></table></div></section><section data-bespoke-state="yolo"><div class="content"></div></section><section data-bespoke-state=""><div class="content"> <div class="byline"><div class="classy">Strict mode:</div></div><h2>removes some <strong> lols</strong></h2><div class="byline"><div class="classy">&amp;</div></div><h2>makes code <strong> faster</strong></h2><div class="byline"><div class="classy">&amp;</div></div><h2> <strong>changes </strong> important stuff</h2><div class="unbrokenline"></div></div></section><section data-bespoke-state="code"><div class="content"><table><thead><tr><td> <h4>YOLO mode</h4></td><td> <h4>Strict mode</h4></td></tr></thead><tbody><tr><td><pre><code data-language="javascript">var a = {x: 1, y: 2};
-var x = 3;
-with (a) {
-  console.log(x);
-}
-// 1</code></pre></td><td><pre><code data-language="javascript">"use strict";
-var a = {x: 1, y: 2};
-var x = 3;
-with (a) { // BOOM!
-  console.log(x);
-}</code></pre></td></tr><tr><td></td><td> <h4>Syntax Error</h4>"Parse error"</td></tr></tbody></table></div></section><section data-bespoke-state="code"><div data-bespoke-bullet="" class="content"><h4>YOLO mode</h4><pre><code data-language="javascript">var eval, arguments;
-eval = 010;
-if (arguments) {
-  function x() {};
-}
-delete eval;</code></pre></div><div data-bespoke-bullet="" class="content"><h4>Strict mode</h4><pre><code data-language="javascript">"use strict";
-var eval, arguments; //keywords BOOM
-eval = 010; //octals BOOM
-if (arguments) {
-  //function declaration in blocks BOOM
-  function x() {};
-}
-<script src="scripts/d41d8cd9.scripts.js"></script>
-  var config = {
-    kitId: 'rgz7pbt',
-    scriptTimeout: 3000
-  };
-  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
-})();
-</script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-s.parentNode.insertBefore(g,s)}(document,'script'));</script></body></html>
+<!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]--><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!-->
+<html lang="en" class="no-js wf-loading"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="components/normalize-css/normalize.css">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory-->
+    <link rel="stylesheet" href="styles/44dd64d3.main.css">
+    <script src="components/modernizr/modernizr.js"></script>
+  </head>
+  <body><!--[if lt IE 7]>
+    <p class="chromeframe">You are using an outdated browser.<a href="http://browsehappy.com/">Upgrade your browser today</a>or<a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>to better experience this site.</p><![endif]--><!--[if lt IE 9]>
+    <script src="components/es5-shim/es5-shim.js"></script>
+    <script src="components/json3/lib/json3.min.js"></script><![endif]-->
+    <article class="bespoke-parent">
+      <section data-bespoke-state="waves blur">
+        <div class="content">
+          <div class="byline">
+            <div class="classy">This talk is called:</div>
+          </div>
+          <h1>Javascript's <strong>Slightly </strong>Stricter Mode</h1>
+          <div class="byline">
+            <div class="classy">with this guy:</div>
+          </div>
+          <div class="me"></div>
+          <div class="byline"><a href="http://goodfil.ms">http://goodfil.ms</a><a href="https://twitter.com/glenmaddern">@glenmaddern</a><a href="http://github.com/geelen">geelen</a></div>
+        </div>
+      </section>
+      <section data-bespoke-state="confession">
+        <div class="content"> 
+          <div class="byline">
+            <div class="classy">Firstly:</div>
+          </div>
+          <h1>A confession</h1>
+          <div class="unbrokenline"></div>
+        </div>
+      </section>
+      <section data-bespoke-state="confession">
+        <div class="content"> 
+          <div class="unbrokenline"></div>
+          <h1>I am not really a Javascript developer</h1>
+          <div class="unbrokenline"></div>
+        </div>
+      </section>
+      <section data-bespoke-state="goodfilms">
+        <div class="content"> 
+          <div class="byline">
+            <div class="classy">When I built</div>
+          </div>
+          <h1> <strong>Goodfilms</strong></h1>
+          <div class="unbrokenline"></div>
+        </div>
+      </section>
+      <section data-bespoke-state="coffee">
+        <div class="content"> 
+          <div class="byline">
+            <div class="classy">I used</div>
+          </div>
+          <h1> <strong>Coffeescript</strong></h1>
+          <div class="byline">
+            <div class="classy">and still do.</div>
+          </div>
+        </div>
+      </section>
+      <section data-bespoke-state="programming"></section>
+      <section data-bespoke-state="code">
+        <div class="content"> 
+          <pre><code data-language="javascript" class="rainbow"><span class="string">"use strict"</span>;</code></pre>
+        </div>
+      </section>
+      <section data-bespoke-state="yeoman">
+        <div class="content"> 
+          <div class="unbrokenline"></div>
+          <h1><strong>Yeoman</strong></h1>
+          <div class="byline">
+            <div class="classy">is awesome.</div>
+          </div>
+        </div>
+      </section>
+      <section data-bespoke-state="code">
+        <div class="content"> 
+          <pre><code data-language="javascript" class="rainbow"><span class="string">"use strict"</span>;</code></pre>
+        </div>
+      </section>
+      <section data-bespoke-state="">
+        <div class="content"> 
+          <h2>This talk is now:</h2>
+          <div class="byline">
+            <div class="classy">Things</div>
+          </div>
+          <h2>Glen<strong> didn't know</strong> about Javascript</h2>
+          <div class="byline">
+            <div class="classy">that are</div>
+          </div>
+          <h2><strong> mildly interesting</strong></h2>
+          <div class="byline">
+            <div class="classy">and relate to</div>
+          </div>
+          <h2><strong>strict mode</strong></h2>
+        </div>
+      </section>
+      <section data-bespoke-state="">
+        <div class="content"> 
+          <div class="byline">
+            <div class="classy">Or,</div>
+          </div>
+          <h2>Bugs</h2>
+          <div class="byline">
+            <div class="classy">that</div>
+          </div>
+          <h2><strong>Strict mode fixes</strong></h2>
+          <div class="byline">
+            <div class="classy">that I</div>
+          </div>
+          <h2>didn't know existed</h2>
+          <div class="unbrokenline"></div>
+        </div>
+      </section>
+      <section data-bespoke-state="code">
+        <div class="content"> 
+          <pre><code data-language="ruby">
+              # rubby.rb
+              a = "foo"</code></pre>
+          <pre><code data-language="coffee">
+              # cahfee.coffee
+              a = "foo"</code></pre>
+          <pre><code data-language="javascript">
+              //lolscript.js
+              var a = "foo";
+              </code></pre>
+        </div>
+      </section>
+      <section data-bespoke-state="code">
+        <div class="content">
+          <div class="row">
+            <pre><code data-language="javascript">
+                var a = Math.PI;
+                console.log(a);
+                // 3.14159...</code></pre>
+            <pre><code data-language="javascript">
+                var a = Math.PI
+                console.log(a)
+                // 3.14159...</code></pre>
+          </div>
+          <div class="row">
+            <pre><code data-language="javascript">
+                a = Math.PI
+                console.log(a)
+                // 3.14159...</code></pre>
+            <pre><code data-language="javascript">
+                function someSetup() {
+                  a = Math.PI;
+                }
+                someSetup();
+                console.log(a);
+                // 3.14159...
+                </code></pre>
+          </div>
+        </div>
+      </section>
+      <section data-bespoke-state="code">
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <td> 
+                  <h4>Non-strict mode</h4>
+                </td>
+                <td> 
+                  <h4>Strict mode</h4>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <pre><code data-language="javascript">
+                      function someSetup() {
+                        a = Math.PI;
+                      }
+                      someSetup();
+                      console.log(a);
+                      // 3.14159...</code></pre>
+                </td>
+                <td>
+                  <pre><code data-language="javascript">
+                      "use strict";
+                      function someSetup() {
+                        a = Math.PI; // BOOM!
+                      }
+                      someSetup();
+                      console.log(a);</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td> 
+                  <h4>throws ReferenceError</h4>"Strict mode forbids implicit creation of global property 'a'"
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section data-bespoke-state="code">
+        <div class="content nofade">
+          <table>
+            <thead>
+              <tr>
+                <td> 
+                  <h4 data-bespoke-bullet="">Non-strict mode</h4>
+                  <h4 data-bespoke-bullet="">YOLO mode</h4>
+                </td>
+                <td> 
+                  <h4>Strict mode</h4>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <pre><code data-language="javascript">
+                      function someSetup() {
+                        a = Math.PI;
+                      }
+                      someSetup();
+                      console.log(a);
+                      // 3.14159...</code></pre>
+                </td>
+                <td>
+                  <pre><code data-language="javascript">
+                      "use strict";
+                      function someSetup() {
+                        var a = Math.PI;
+                      }
+                      someSetup();
+                      console.log(a); // BOOM!</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td> 
+                  <h4>throws ReferenceError</h4>"Can't find variable: a"
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section data-bespoke-state="yolo">
+        <div class="content"></div>
+      </section>
+      <section data-bespoke-state="">
+        <div class="content"> 
+          <div class="byline">
+            <div class="classy">Strict mode:</div>
+          </div>
+          <h2>removes some <strong> lols</strong></h2>
+          <div class="byline">
+            <div class="classy">&amp;</div>
+          </div>
+          <h2>makes code <strong> faster</strong></h2>
+          <div class="byline">
+            <div class="classy">&amp;</div>
+          </div>
+          <h2> <strong>changes </strong> important stuff</h2>
+          <div class="unbrokenline"></div>
+        </div>
+      </section>
+      <section data-bespoke-state="code">
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <td> 
+                  <h4>YOLO mode</h4>
+                </td>
+                <td> 
+                  <h4>Strict mode</h4>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <pre><code data-language="javascript">
+                      var a = {x: 1, y: 2};
+                      var x = 3;
+                      with (a) {
+                        console.log(x);
+                      }
+                      // 1</code></pre>
+                </td>
+                <td>
+                  <pre><code data-language="javascript">
+                      "use strict";
+                      var a = {x: 1, y: 2};
+                      var x = 3;
+                      with (a) { // BOOM!
+                        console.log(x);
+                      }</code></pre>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td> 
+                  <h4>Syntax Error</h4>"Parse error"
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section data-bespoke-state="code">
+        <div data-bespoke-bullet="" class="content">
+          <h4>YOLO mode</h4>
+          <pre><code data-language="javascript">
+              var eval, arguments;
+              eval = 010;
+              if (arguments) {
+                function x() {};
+              }
+              delete eval;</code></pre>
+        </div>
+        <div data-bespoke-bullet="" class="content">
+          <h4>Strict mode</h4>
+          <pre><code data-language="javascript">
+              "use strict";
+              var eval, arguments; //keywords BOOM
+              eval = 010; //octals BOOM
+              if (arguments) {
+                //function declaration in blocks BOOM
+                function x() {};
+              }
+              delete eval; //deleting locals BOOM</code></pre>
+          <h4>Syntax Error</h4>"Parse error"
+        </div>
+      </section>
+      <section data-bespoke-state="no">
+        <div class="content"> 
+          <div class="unbrokenline"></div>
+          <h1>No more lols</h1>
+          <div class="unbrokenline"></div>
+        </div>
+      </section>
+      <section data-bespoke-state="coffee">
+        <div class="content"> 
+          <h2><strong>CoffeeScript</strong> is awesome.</h2>
+          <div class="unbrokenline"></div>
+          <h2>but it helps to<strong> know Javascript first</strong></h2>
+        </div>
+      </section>
+      <section data-bespoke-state="tldr">
+        <div class="content"> 
+          <div class="byline">
+            <div class="classy">TL;DR:</div>
+          </div>
+          <h1>Use<strong> Strict Mode</strong> inside an<strong> IIFE</strong></h1>
+          <div class="unbrokenline"></div>
+        </div>
+      </section>
+      <section data-bespoke-state="love">
+        <div class="content"> 
+          <div class="unbrokenline"></div>
+          <h1>I love the Web</h1>
+          <div class="byline">
+            <div class="classy">...but I still don't 'know' JS.</div>
+          </div>
+        </div>
+      </section>
+    </article>
+    <script src="components/bespoke.js/dist/bespoke.js"></script>
+    <script src="scripts/959fd254.scripts.js"></script>
+    <script>
+      (function() {
+        var config = {
+          kitId: 'rgz7pbt',
+          scriptTimeout: 3000
+        };
+        var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+      })();
+      
+    </script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>

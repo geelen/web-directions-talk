@@ -18,7 +18,7 @@
           if (rules.style && rules.style.backgroundImage) {
             matches = rules.style.backgroundImage.match(/url\((.*)\)/);
             if (matches) {
-              image = new Image;
+              image = new Image();
               image.src = matches[1];
             }
           }
