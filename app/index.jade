@@ -555,28 +555,6 @@ block content
                 pre
                   code(data-language='javascript').
                     // file1.js
-                    (function() {
-                      "use strict";
-                      // do some rad stuff
-                    })();
-
-                    // file2.js
-                    jQuery.trolol...
-            tr
-              td
-                h4 Other code interpreted
-                  br
-                  | as Strict &nbsp;✖
-              td
-                h4 Your code strict &nbsp;✔
-                  br
-                  | Other code unchanged &nbsp;✔
-          tbody(data-bespoke-bullet)
-            tr
-              td
-                pre
-                  code(data-language='javascript').
-                    // file1.js
                     jQuery.trolol...
 
                     // file2.js
@@ -584,6 +562,28 @@ block content
                     (function() {
                       // do some rad stuff
                     })();
+            tr
+              td
+                h4 Other code interpreted
+                  br
+                  | as Strict &nbsp;✖
+              td
+                h4 Your code is
+                  br
+                  | no longer Strict &nbsp;✖
+          tbody(data-bespoke-bullet)
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    // file1.js
+                    (function() {
+                      "use strict";
+                      // do some rad stuff
+                    })();
+
+                    // file2.js
+                    jQuery.trolol...
               td
                 pre
                   code(data-language='javascript').
@@ -597,9 +597,9 @@ block content
                     })();
             tr
               td
-                h4 Your code is
+                h4 Your code strict &nbsp;✔
                   br
-                  | no longer Strict &nbsp;✖
+                  | Other code unchanged &nbsp;✔
               td
                 h4 Other code unchanged &nbsp;✔
                   br
