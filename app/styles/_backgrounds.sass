@@ -1,3 +1,4 @@
+$brightnessFactor: 1.0
 
 article
   position: absolute
@@ -12,7 +13,7 @@ article
     background-position: center center
     background-repeat: no-repeat
     content: ''
-    +filter(grayscale(0.3) brightness(0.3))
+    +filter(grayscale(0.3) brightness(0.3 * $brightnessFactor))
   &::before
     z-index: 1
     width: 20%
@@ -32,31 +33,31 @@ article
   // use ::before for gifs (small size, scaled up)
   &.waves::before
     +transform(scale(6.5))
-    +filter(blur(1px) grayscale(0.3) brightness(0.4))
+    +filter(blur(1px) grayscale(0.3) brightness(0.4 * $brightnessFactor))
     background-image: url('http://stream1.gifsoup.com/view/609536/beach-waves-o.gif')
   &.chuck::before
     background-image: url('http://holykkphils.files.wordpress.com/2011/06/chuck-norris-approved.gif')
   &.approve::before
     background-image: url('http://boards.420chan.org/pol/src/1366522404633.gif')
   &.goodfilms::before
-    +filter(grayscale(0.3) brightness(0.4))
+    +filter(grayscale(0.3) brightness(0.4 * $brightnessFactor))
     background-image: url('http://24.media.tumblr.com/tumblr_lgb02mCfLm1qe0eclo1_r5_500.gif')
   &.coffee::before
-    +filter(grayscale(0.3) brightness(0.4))
+    +filter(grayscale(0.3) brightness(0.4 * $brightnessFactor))
     background-image: url('http://24.media.tumblr.com/tumblr_lzvxa27m6M1r2gn3bo1_400.gif')
   &.tldr::before
-    +filter(grayscale(0.5) brightness(0.2))
+    +filter(grayscale(0.5) brightness(0.2 * $brightnessFactor))
     background-image: url('http://i0.kym-cdn.com/photos/images/newsfeed/000/154/912/berneydidnotread.gif?1318992465')
   &.yolo::before
-    +filter(grayscale(0.5) brightness(0.8))
+    +filter(grayscale(0.5) brightness(0.8 * $brightnessFactor))
     background-image: url('http://24.media.tumblr.com/tumblr_m30nd7SIk41r34vqgo1_1280.gif')
   &.success::before
-    +filter(grayscale(0.5) brightness(0.4))
+    +filter(grayscale(0.5) brightness(0.4 * $brightnessFactor))
     background-image: url('http://www.thedisabledcubicle.com/wp-content/uploads/2012/11/apollorockygif1.gif')
   &.no::before
     background-image: url('http://stream1.gifsoup.com/view5/4253079/no-god-o.gif')
   &.serious::before
-    +filter(grayscale(0.5) brightness(0.4))
+    +filter(grayscale(0.5) brightness(0.4 * $brightnessFactor))
     background-image: url('http://24.media.tumblr.com/tumblr_lhhjisnv1x1qe0eclo1_r10_500.gif')
 
   // use ::after for images (full size, cover)
@@ -67,12 +68,15 @@ article
   &.love::after
     background-image: url('../images/love_coloring.jpg')
   &.yeoman::after
-    +filter(grayscale(0.6) contrast(0.9) brightness(0.3))
+    +filter(grayscale(0.6) contrast(0.9) brightness(0.3 * $brightnessFactor))
     background-image: url('http://yeoman.io/assets/img/yeoman-005.png')
   &.programming::after
     +filter(none)
     background-size: contain
     background-image: url('http://imgon.net/di-JMPP.gif')
+  &.dangerous::after
+    +filter(contrast(0.4) brightness(0.25 * $brightnessFactor))
+    background-image: url('http://24.media.tumblr.com/tumblr_m8bjqexyfX1rb85xmo1_500.gif')
 
   // neither for solid colours
   &.code

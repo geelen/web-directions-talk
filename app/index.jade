@@ -2,7 +2,7 @@ extends layout
 
 block content
   article.bespoke-parent
-    section(data-bespoke-state='waves blur')
+    section(data-bespoke-state='waves')
       .content
         .byline
           .classy This talk is called:
@@ -252,7 +252,7 @@ block content
         pre
           code(data-language='javascript').
             "use strict";
-            var eval, arguments;        // keywords BOOM
+            var eval, arguments;        // keywords as vars BOOM
             eval = 010;                 // octals BOOM
             delete eval;                // deleting locals BOOM
             arguments = {x: 1, x: eval} // duplicate key BOOM
@@ -265,7 +265,15 @@ block content
     section(data-bespoke-state='no')
       .content
         .unbrokenline
-        h1 No more lols
+        h1 Stop the lols!
+        .unbrokenline
+
+    section
+      .content
+        .byline
+          .classy What about
+        h2
+          strong Performance?
         .unbrokenline
 
     section(data-bespoke-state='code')
@@ -358,19 +366,12 @@ block content
           strong Serious time
         .unbrokenline
 
-    section
+    section(data-bespoke-state='serious')
       .content
         .byline
-          .classy Strict mode:
-        h2 changes
-          strong  semantics
-        .byline
-          .classy which means
-        h2 existing code
-        .byline
-          .classy can
+          .classy Let's talk about the
         h2
-          strong break
+          strong Semantic changes
         .unbrokenline
 
     section(data-bespoke-state='code')
@@ -406,14 +407,97 @@ block content
             tr
               td
                 h4
-                  code this&nbsp;
-                  |  defaults to
-                  code  window
+                  strong this
+                  |  becomes
+                  strong  window
               td
                 h4
-                  code this&nbsp;
-                  |  defaults to
-                  code  undefined
+                  strong this
+                  |  becomes
+                  strong  undefined
+
+    section(data-bespoke-state='code')
+      .content
+        table
+          tbody
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    var whatIsThis;
+                    (function() {
+                      whatIsThis = function() {
+                        return this;
+                      };
+                    })();
+                    (function() {
+                      "use strict";
+                      console.log(whatIsThis());
+                    })();
+                    // window
+              td
+                pre
+                  code(data-language='javascript').
+                    var whatIsThis;
+                    (function() {
+                      "use strict";
+                      whatIsThis = function() {
+                        return this;
+                      };
+                    })();
+                    (function() {
+                      console.log(whatIsThis());
+                    })();
+                    // undefined
+            tr
+              td
+                h4 Strict Mode invocation
+                  br
+                  | of YOLO function
+              td
+                h4 Strict Mode declaration
+                  br
+                  | YOLO invocation
+
+    section(data-bespoke-state='code')
+      .content
+        table
+          thead
+            tr
+              td(colspan=2)
+                h3 Evals
+          tbody
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    var a = 1, b = 2;
+                    eval("a = 'foo';");
+                    eval("var b = 'bar';");
+                    eval("var c = 'baz';");
+                    console.log(a); // 'foo'
+                    console.log(b); // 'bar'
+                    console.log(c); // 'baz'
+              td
+                pre
+                  code(data-language='javascript').
+                    "use strict";
+                    var a = 1, b = 2;
+                    eval("a = 'foo';");
+                    eval("var b = 'bar';");
+                    eval("var c = 'baz';");
+                    console.log(a); // 'foo'
+                    console.log(b); // 2
+                    console.log(c); // BOOM!
+            tr
+              td
+                h4 Eval'd code getting all
+                  br
+                  | up in yo' business &nbsp;✖
+              td
+                h4 Eval'd code evaluated
+                  br
+                  | in its own scope &nbsp;✔
 
     section
       .content
@@ -427,48 +511,25 @@ block content
           strong break
           |  if interpreted as strict.
 
-    section(data-bespoke-state='code')
+    section
       .content
-        table
-          tbody
-            tr
-              td
-                pre
-                  code(data-language='javascript').
-                    var whatIsThis;
-                    (function() {
-                      whatIsThis = function() {
-                        return this;
-                      };
-                    })();
-                    var thisWas = (function() {
-                      "use strict";
-                      console.log(whatIsThis());
-                    })();
-                    // window
-              td
-                pre
-                  code(data-language='javascript').
-                    "use strict";
-                    var whatIsThis;
-                    (function() {
-                      whatIsThis = function() {
-                        return this;
-                      };
-                    })();
-                    var thisWas = (function() {
-                      console.log(whatIsThis());
-                    })();
-                    // undefined
-            tr
-              td
-                h4 Strict Mode invocation
-                  br
-                  | of YOLO function
-              td
-                h4 Strict Mode declaration
-                  br
-                  | and invocation
+        .byline
+          .classy Also,
+        h2 Strict Mode is
+          strong  ignored
+        .byline
+          .classy by
+        h2 older browsers
+        .byline
+          .classy (before IE10, Safari 5.1, FF4, Chrome 13)
+
+    section(data-bespoke-state='dangerous')
+      .content
+        .byline
+          .classy How to
+        h2
+          strong Be safe
+        .unbrokenline
 
     section(data-bespoke-state='code')
       .content
@@ -476,31 +537,31 @@ block content
           thead
             tr
               td(colspan=2)
-                h2 Concatenation
-          tbody
+                h3 Concatenation
+          tbody(data-bespoke-bullet)
             tr
               td
                 pre
                   code(data-language='javascript').
-                    // your code
+                    // file1.js
                     "use strict";
                     (function() {
                       // do some rad stuff
                     })();
 
-                    // concatenate other files
-                    jQuery.lolol...
+                    // file2.js
+                    jQuery.trolol...
               td
                 pre
                   code(data-language='javascript').
-                    // your code
+                    // file1.js
                     (function() {
                       "use strict";
                       // do some rad stuff
                     })();
 
-                    // concatenate other files
-                    jQuery.lolol...
+                    // file2.js
+                    jQuery.trolol...
             tr
               td
                 h4 Other code interpreted
@@ -510,6 +571,54 @@ block content
                 h4 Your code strict &nbsp;✔
                   br
                   | Other code unchanged &nbsp;✔
+          tbody(data-bespoke-bullet)
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    // file1.js
+                    jQuery.trolol...
+
+                    // file2.js
+                    "use strict";
+                    (function() {
+                      // do some rad stuff
+                    })();
+              td
+                pre
+                  code(data-language='javascript').
+                    // file1.js
+                    jQuery.trolol...
+
+                    // file2.js
+                    (function() {
+                      "use strict";
+                      // do some rad stuff
+                    })();
+            tr
+              td
+                h4 Your code is
+                  br
+                  | no longer Strict &nbsp;✖
+              td
+                h4 Other code unchanged &nbsp;✔
+                  br
+                  | Your code Strict &nbsp;✔
+
+    section(data-bespoke-state='code')
+      .content
+        h1 Wrap
+          strong  every file
+        .row
+          pre
+            code(data-language='javascript').
+              // safe.js
+              (function() {
+                "use strict";
+
+                // go bananas.
+
+              })();
 
     section(data-bespoke-state='tldr')
       .content
@@ -527,23 +636,15 @@ block content
           strong Strict Mode
           |  enabled
         .unbrokenline
-      pre
-        code(data-language='javascript').
-          (function() {
-            "use strict";
-
-            // go bananas.
-
-          })();
 
     section(data-bespoke-state='coffee')
       .content
         h2
           strong CoffeeScript
-          |  is awesome.
+          |  is awesome
         .unbrokenline
-        h2 but it helps to
-          strong  know Javascript first
+        h2 but it
+          strong  won't teach you Javascript
 
     section(data-bespoke-state='success')
       .content
@@ -551,3 +652,14 @@ block content
         h1
           strong Thank You!
         .unbrokenline
+
+    section(data-bespoke-state='waves')
+      .content
+        .byline
+          .classy For more information:
+        h3 http://github.com/geelen/web-directions-talk
+        .byline
+          .classy or hit me up on Twitter
+        .me
+        h3
+          a(href='https://twitter.com/glenmaddern') @glenmaddern
