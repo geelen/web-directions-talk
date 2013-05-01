@@ -374,29 +374,58 @@ block content
         .unbrokenline
 
     section(data-bespoke-state='code')
-      .content(data-bespoke-bullet)
-        h2 .call vs () - YOLO mode
-        pre
-          code(data-language='javascript').
-            function x(a) { this.a = a; };
+      .content
+        h3 Implicit global this
+        table
+          tbody
+            tr
+              td
+                pre
+                  code(data-language='javascript').
+                    function x(a) {
+                      this.a = a;
+                    };
 
-            // Calling a function:
-            x("foo");
-            // is equivalent to:
-            x.call(window, foo);
-            // so window.a = "foo";
-      .content(data-bespoke-bullet)
-        h2 .call vs () - Strict mode
-        pre
-          code(data-language='javascript').
-            "use strict";
-            function x(a) { this.a = a; };
+                    // Calling a function:
+                    x("foo");
+                    // is equivalent to:
+                    x.call(window, "foo");
+                    // so window.a = "foo";
+              td
+                pre
+                  code(data-language='javascript').
+                    "use strict";
+                    function x(a) {
+                      this.a = a; //BOOM!
+                    };
 
-            // Calling a function:
-            x("foo");
-            // is equivalent to:
-            x.call(undefined, foo);
-            // so this explodes
+                    // Calling a function:
+                    x("foo");
+                    // is equivalent to:
+                    x.call(undefined, "foo");
+            tr
+              td
+                h4
+                  code this&nbsp;
+                  |  defaults to
+                  code  window
+              td
+                h4
+                  code this&nbsp;
+                  |  defaults to
+                  code  undefined
+
+    section
+      .content
+        h2 Javascript code
+        .byline
+          .classy that
+        h2 was written YOLO
+        .byline
+          .classy may well
+        h2
+          strong break
+          |  if interpreted as strict.
 
     section(data-bespoke-state='code')
       .content
@@ -440,18 +469,6 @@ block content
                 h4 Strict Mode declaration
                   br
                   | and invocation
-
-    section
-      .content
-        h2 Javascript code
-        .byline
-          .classy that
-        h2 was written YOLO
-        .byline
-          .classy may well
-        h2
-          strong break
-          |  if interpreted as strict.
 
     section(data-bespoke-state='code')
       .content
