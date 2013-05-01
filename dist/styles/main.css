@@ -53,14 +53,6 @@ article.waves::before {
   filter: blur(1px) grayscale(0.3) brightness(0.4);
   background-image: url("http://stream1.gifsoup.com/view/609536/beach-waves-o.gif");
 }
-/* line 38, ../../app/styles/_backgrounds.sass */
-article.chuck::before {
-  background-image: url("http://holykkphils.files.wordpress.com/2011/06/chuck-norris-approved.gif");
-}
-/* line 40, ../../app/styles/_backgrounds.sass */
-article.approve::before {
-  background-image: url("http://boards.420chan.org/pol/src/1366522404633.gif");
-}
 /* line 42, ../../app/styles/_backgrounds.sass */
 article.goodfilms::before {
   -webkit-filter: grayscale(0.3) brightness(0.4);
