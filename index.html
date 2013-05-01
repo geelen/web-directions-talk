@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]--><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html lang="en" class="no-js wf-loading"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title></title><meta name="description" content=""><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="components/normalize-css/normalize.css"><!-- Place favicon.ico and apple-touch-icon.png in the root directory--><!-- build:css styles/main.css--><link rel="stylesheet" href="styles/solarized-light.css"><link rel="stylesheet" href="styles/main.css"><!-- endbuild--><script src="components/modernizr/modernizr.js"></script></head><body><!--[if lt IE 7]><p class="chromeframe">You are using an outdated browser.<a href="http://browsehappy.com/">Upgrade your browser today</a>or<a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>to better experience this site.</p><![endif]--><!--[if lt IE 9]><script src="components/es5-shim/es5-shim.js"></script><script src="components/json3/lib/json3.min.js"></script><![endif]--><article class="bespoke-parent"><section data-bespoke-state="waves blur"><div class="content"><div class="byline"><div class="classy">This talk is called:</div></div><h1>Javascript's<strong> Slightly</strong> Stricter Mode</h1><div class="byline"><div class="classy">with this guy:</div></div><div class="me"></div><div class="byline"><a href="http://goodfil.ms">http://goodfil.ms</a><a href="https://twitter.com/glenmaddern">@glenmaddern</a><a href="http://github.com/geelen">geelen</a></div></div></section><section data-bespoke-state="confession"><div class="content"><div class="byline"><div class="classy">Firstly:</div></div><h1>A confession</h1><div class="unbrokenline"></div></div></section><section data-bespoke-state="confession"><div class="content"><div class="unbrokenline"></div><h1>I am not really a Javascript developer</h1><div class="unbrokenline"></div></div></section><section data-bespoke-state="goodfilms"><div class="content"><div class="byline"><div class="classy">When I built</div></div><h1><strong>Goodfilms</strong></h1><div class="unbrokenline"></div></div></section><section data-bespoke-state="coffee"><div class="content"><div class="byline"><div class="classy">I used</div></div><h1><strong>Coffeescript</strong></h1><div class="byline"><div class="classy">and still do.</div></div></div></section><section data-bespoke-state="programming"></section><section data-bespoke-state="code"><div class="content"><h1>When did I start using it?</h1><pre style="display: inline-block;"><code data-language="javascript" class="rainbow"><span class="string">"use strict"</span>;</code></pre></div></section><section data-bespoke-state="yeoman"><div class="content"><div class="unbrokenline"></div><h1><strong>Yeoman</strong> generated it for me.</h1><div class="byline"><div class="classy">of course!</div></div></div></section><section data-bespoke-state=""><div class="content"><h2>This talk is now:</h2><div class="byline"><div class="classy">Things</div></div><h2>Glen<strong> didn't know</strong> about Javascript</h2><div class="byline"><div class="classy">that are</div></div><h2><strong> mildly interesting</strong></h2><div class="byline"><div class="classy">and relate to</div></div><h2><strong>strict mode</strong></h2></div></section><section data-bespoke-state=""><div class="content"><div class="byline"><div class="classy">Or,</div></div><h2>Bugs</h2><div class="byline"><div class="classy">that</div></div><h2><strong>Strict mode fixes</strong></h2><div class="byline"><div class="classy">that I</div></div><h2>didn't know existed</h2><div class="unbrokenline"></div></div></section><section data-bespoke-state="code"><div class="content"><pre><code data-language="ruby"># rubby.rb
+<!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]--><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html lang="en" class="no-js wf-loading"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title></title><meta name="description" content=""><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="components/normalize-css/normalize.css"><!-- Place favicon.ico and apple-touch-icon.png in the root directory--><!-- build:css styles/main.css--><link rel="stylesheet" href="styles/solarized-light.css"><link rel="stylesheet" href="styles/main.css"><!-- endbuild--><script src="components/modernizr/modernizr.js"></script></head><body><!--[if lt IE 7]><p class="chromeframe">You are using an outdated browser.<a href="http://browsehappy.com/">Upgrade your browser today</a>or<a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>to better experience this site.</p><![endif]--><!--[if lt IE 9]><script src="components/es5-shim/es5-shim.js"></script><script src="components/json3/lib/json3.min.js"></script><![endif]--><article class="bespoke-parent"><section data-bespoke-state="waves"><div class="content"><div class="byline"><div class="classy">This talk is called:</div></div><h1>Javascript's<strong> Slightly</strong> Stricter Mode</h1><div class="byline"><div class="classy">with this guy:</div></div><div class="me"></div><div class="byline"><a href="http://goodfil.ms">http://goodfil.ms</a><a href="https://twitter.com/glenmaddern">@glenmaddern</a><a href="http://github.com/geelen">geelen</a></div></div></section><section data-bespoke-state="confession"><div class="content"><div class="byline"><div class="classy">Firstly:</div></div><h1>A confession</h1><div class="unbrokenline"></div></div></section><section data-bespoke-state="confession"><div class="content"><div class="unbrokenline"></div><h1>I am not really a Javascript developer</h1><div class="unbrokenline"></div></div></section><section data-bespoke-state="goodfilms"><div class="content"><div class="byline"><div class="classy">When I built</div></div><h1><strong>Goodfilms</strong></h1><div class="unbrokenline"></div></div></section><section data-bespoke-state="coffee"><div class="content"><div class="byline"><div class="classy">I used</div></div><h1><strong>Coffeescript</strong></h1><div class="byline"><div class="classy">and still do.</div></div></div></section><section data-bespoke-state="programming"></section><section data-bespoke-state="code"><div class="content"><h1>When did I start using it?</h1><pre style="display: inline-block;"><code data-language="javascript" class="rainbow"><span class="string">"use strict"</span>;</code></pre></div></section><section data-bespoke-state="yeoman"><div class="content"><div class="unbrokenline"></div><h1><strong>Yeoman</strong> generated it for me.</h1><div class="byline"><div class="classy">of course!</div></div></div></section><section data-bespoke-state=""><div class="content"><h2>This talk is now:</h2><div class="byline"><div class="classy">Things</div></div><h2>Glen<strong> didn't know</strong> about Javascript</h2><div class="byline"><div class="classy">that are</div></div><h2><strong> mildly interesting</strong></h2><div class="byline"><div class="classy">and relate to</div></div><h2><strong>strict mode</strong></h2></div></section><section data-bespoke-state=""><div class="content"><div class="byline"><div class="classy">Or,</div></div><h2>Bugs</h2><div class="byline"><div class="classy">that</div></div><h2><strong>Strict mode fixes</strong></h2><div class="byline"><div class="classy">that I</div></div><h2>didn't know existed</h2><div class="unbrokenline"></div></div></section><section data-bespoke-state="code"><div class="content"><pre><code data-language="ruby"># rubby.rb
 a = "foo"</code></pre><pre><code data-language="coffee"># cahfee.coffee
 a = "foo"</code></pre><pre><code data-language="javascript">//lolscript.js
 var a = "foo";
@@ -44,13 +44,13 @@ function y(a, a) {
 console.log(y(null, arguments.x));
 // 8
 </code></pre></div><div data-bespoke-bullet class="content"><h3>Strict mode</h3><pre><code data-language="javascript">"use strict";
-var eval, arguments;        // keywords BOOM
+var eval, arguments;        // keywords as vars BOOM
 eval = 010;                 // octals BOOM
 delete eval;                // deleting locals BOOM
 arguments = {x: 1, x: eval} // duplicate key BOOM
 function y(a, a) {          // duplicate argument BOOM
   return a;
-}</code></pre><h4>Syntax Error</h4>"Parse error"</div></section><section data-bespoke-state="no"><div class="content"><div class="unbrokenline"></div><h1>No more lols</h1><div class="unbrokenline"></div></div></section><section data-bespoke-state="code"><div class="content"><table><thead><tr><td><h3>YOLO mode</h3></td><td><h3>Strict mode</h3></td></tr></thead><tbody><tr><td><pre><code data-language="javascript">var a = {x: 1, y: 2};
+}</code></pre><h4>Syntax Error</h4>"Parse error"</div></section><section data-bespoke-state="no"><div class="content"><div class="unbrokenline"></div><h1>Stop the lols!</h1><div class="unbrokenline"></div></div></section><section><div class="content"><div class="byline"><div class="classy">What about</div></div><h2><strong>Performance?</strong></h2><div class="unbrokenline"></div></div></section><section data-bespoke-state="code"><div class="content"><table><thead><tr><td><h3>YOLO mode</h3></td><td><h3>Strict mode</h3></td></tr></thead><tbody><tr><td><pre><code data-language="javascript">var a = {x: 1, y: 2};
 var x = 3;
 with (a) {
   console.log(x);
@@ -80,61 +80,91 @@ function y() { // BOOM ☟
 function x() {
   return y();
 }
-console.log(x());</code></pre></td></tr><tr><td><em>Note: Function.caller can do<br>most of the same things anyway</em></td><td><h4>Type Error</h4>"Unable to access callee of strict mode function"</td></tr></tbody></table></div></section><section data-bespoke-state="serious"><div class="content"><div class="unbrokenline"></div><h2><strong>Serious time</strong></h2><div class="unbrokenline"></div></div></section><section><div class="content"><div class="byline"><div class="classy">Strict mode:</div></div><h2>changes<strong> semantics</strong></h2><div class="byline"><div class="classy">which means</div></div><h2>existing code</h2><div class="byline"><div class="classy">can</div></div><h2><strong>break</strong></h2><div class="unbrokenline"></div></div></section><section data-bespoke-state="code"><div data-bespoke-bullet class="content"><h2>.call vs () - YOLO mode</h2><pre><code data-language="javascript">function x(a) { this.a = a; };
+console.log(x());</code></pre></td></tr><tr><td><em>Note: Function.caller can do<br>most of the same things anyway</em></td><td><h4>Type Error</h4>"Unable to access callee of strict mode function"</td></tr></tbody></table></div></section><section data-bespoke-state="serious"><div class="content"><div class="unbrokenline"></div><h2><strong>Serious time</strong></h2><div class="unbrokenline"></div></div></section><section data-bespoke-state="serious"><div class="content"><div class="byline"><div class="classy">Let's talk about the</div></div><h2><strong>Semantic changes</strong></h2><div class="unbrokenline"></div></div></section><section data-bespoke-state="code"><div class="content"><h3>Implicit global this</h3><table><tbody><tr><td><pre><code data-language="javascript">function x(a) {
+  this.a = a;
+};
 
 // Calling a function:
 x("foo");
 // is equivalent to:
-x.call(window, foo);
-// so window.a = "foo";</code></pre></div><div data-bespoke-bullet class="content"><h2>.call vs () - Strict mode</h2><pre><code data-language="javascript">"use strict";
-function x(a) { this.a = a; };
+x.call(window, "foo");
+// so window.a = "foo";</code></pre></td><td><pre><code data-language="javascript">"use strict";
+function x(a) {
+  this.a = a; //BOOM!
+};
 
 // Calling a function:
 x("foo");
 // is equivalent to:
-x.call(undefined, foo);
-// so this explodes
-</code></pre></div></section><section data-bespoke-state="code"><div class="content"><table><tbody><tr><td><pre><code data-language="javascript">var whatIsThis;
+x.call(undefined, "foo");</code></pre></td></tr><tr><td><h4><strong>this</strong> becomes<strong> window</strong></h4></td><td><h4><strong>this</strong> becomes<strong> undefined</strong></h4></td></tr></tbody></table></div></section><section data-bespoke-state="code"><div class="content"><table><tbody><tr><td><pre><code data-language="javascript">var whatIsThis;
 (function() {
   whatIsThis = function() {
     return this;
   };
 })();
-var thisWas = (function() {
+(function() {
   "use strict";
   console.log(whatIsThis());
 })();
-// window</code></pre></td><td><pre><code data-language="javascript">"use strict";
-var whatIsThis;
+// window</code></pre></td><td><pre><code data-language="javascript">var whatIsThis;
 (function() {
+  "use strict";
   whatIsThis = function() {
     return this;
   };
 })();
-var thisWas = (function() {
+(function() {
   console.log(whatIsThis());
 })();
-// undefined</code></pre></td></tr><tr><td><h4>Strict Mode invocation<br>of YOLO function</h4></td><td><h4>Strict Mode declaration<br>and invocation</h4></td></tr></tbody></table></div></section><section><div class="content"><h2>Javascript code</h2><div class="byline"><div class="classy">that</div></div><h2>was written YOLO</h2><div class="byline"><div class="classy">may well</div></div><h2><strong>break</strong> if interpreted as strict.</h2></div></section><section data-bespoke-state="code"><div class="content"><table><thead><tr><td colspan="2"><h2>Concatenation</h2></td></tr></thead><tbody><tr><td><pre><code data-language="javascript">// your code
+// undefined</code></pre></td></tr><tr><td><h4>Strict Mode invocation<br>of YOLO function</h4></td><td><h4>Strict Mode declaration<br>YOLO invocation</h4></td></tr></tbody></table></div></section><section data-bespoke-state="code"><div class="content"><table><thead><tr><td colspan="2"><h3>Evals</h3></td></tr></thead><tbody><tr><td><pre><code data-language="javascript">var a = 1, b = 2;
+eval("a = 'foo';");
+eval("var b = 'bar';");
+eval("var c = 'baz';");
+console.log(a); // 'foo'
+console.log(b); // 'bar'
+console.log(c); // 'baz'</code></pre></td><td><pre><code data-language="javascript">"use strict";
+var a = 1, b = 2;
+eval("a = 'foo';");
+eval("var b = 'bar';");
+eval("var c = 'baz';");
+console.log(a); // 'foo'
+console.log(b); // 2
+console.log(c); // BOOM!</code></pre></td></tr><tr><td><h4>Eval'd code getting all<br>up in yo' business &nbsp;✖</h4></td><td><h4>Eval'd code evaluated<br>in its own scope &nbsp;✔</h4></td></tr></tbody></table></div></section><section><div class="content"><h2>Javascript code</h2><div class="byline"><div class="classy">that</div></div><h2>was written YOLO</h2><div class="byline"><div class="classy">may well</div></div><h2><strong>break</strong> if interpreted as strict.</h2></div></section><section><div class="content"><div class="byline"><div class="classy">Also,</div></div><h2>Strict Mode is<strong> ignored</strong></h2><div class="byline"><div class="classy">by</div></div><h2>older browsers</h2><div class="byline"><div class="classy">(before IE10, Safari 5.1, FF4, Chrome 13)</div></div></div></section><section data-bespoke-state="dangerous"><div class="content"><div class="byline"><div class="classy">How to</div></div><h2><strong>Be safe</strong></h2><div class="unbrokenline"></div></div></section><section data-bespoke-state="code"><div class="content"><table><thead><tr><td colspan="2"><h3>Concatenation</h3></td></tr></thead><tbody data-bespoke-bullet><tr><td><pre><code data-language="javascript">// file1.js
 "use strict";
 (function() {
   // do some rad stuff
 })();
 
-// concatenate other files
-jQuery.lolol...</code></pre></td><td><pre><code data-language="javascript">// your code
+// file2.js
+jQuery.trolol...</code></pre></td><td><pre><code data-language="javascript">// file1.js
+jQuery.trolol...
+
+// file2.js
+"use strict";
+(function() {
+  // do some rad stuff
+})();</code></pre></td></tr><tr><td><h4>Other code interpreted<br>as Strict &nbsp;✖</h4></td><td><h4>Your code is<br>no longer Strict &nbsp;✖</h4></td></tr></tbody><tbody data-bespoke-bullet><tr><td><pre><code data-language="javascript">// file1.js
 (function() {
   "use strict";
   // do some rad stuff
 })();
 
-// concatenate other files
-jQuery.lolol...</code></pre></td></tr><tr><td><h4>Other code interpreted<br>as Strict &nbsp;✖</h4></td><td><h4>Your code strict &nbsp;✔<br>Other code unchanged &nbsp;✔</h4></td></tr></tbody></table></div></section><section data-bespoke-state="tldr"><div class="content"><div class="byline"><div class="classy">TL;DR:</div></div><h1>Wrap<strong> every file</strong></h1><div class="byline"><div class="classy">inside an</div></div><h1><strong>IIFE</strong></h1><div class="byline"><div class="classy">with</div></div><h1><strong>Strict Mode</strong> enabled</h1><div class="unbrokenline"></div></div><pre><code data-language="javascript">(function() {
+// file2.js
+jQuery.trolol...</code></pre></td><td><pre><code data-language="javascript">// file1.js
+jQuery.trolol...
+
+// file2.js
+(function() {
+  "use strict";
+  // do some rad stuff
+})();</code></pre></td></tr><tr><td><h4>Your code strict &nbsp;✔<br>Other code unchanged &nbsp;✔</h4></td><td><h4>Other code unchanged &nbsp;✔<br>Your code Strict &nbsp;✔</h4></td></tr></tbody></table></div></section><section data-bespoke-state="code"><div class="content"><h1>Wrap<strong> every file</strong></h1><div class="row"><pre><code data-language="javascript">// safe.js
+(function() {
   "use strict";
   
   // go bananas.
   
 })();
-</code></pre></section><section data-bespoke-state="coffee"><div class="content"><h2><strong>CoffeeScript</strong> is awesome.</h2><div class="unbrokenline"></div><h2>but it helps to<strong> know Javascript first</strong></h2></div></section><section data-bespoke-state="success"><div class="content"><div class="unbrokenline"></div><h1><strong>Thank You!</strong></h1><div class="unbrokenline"></div></div></section></article><script src="components/bespoke.js/dist/bespoke.js"></script><!-- build:js scripts/scripts.js--><script src="scripts/bespoke-plugins.js"></script><script src="scripts/rainbow.custom.min.js"></script><script src="scripts/app.js"></script><!-- endbuild--><script>(function() {
+</code></pre></div></div></section><section data-bespoke-state="tldr"><div class="content"><div class="byline"><div class="classy">TL;DR:</div></div><h1>Wrap<strong> every file</strong></h1><div class="byline"><div class="classy">inside an</div></div><h1><strong>IIFE</strong></h1><div class="byline"><div class="classy">with</div></div><h1><strong>Strict Mode</strong> enabled</h1><div class="unbrokenline"></div></div></section><section data-bespoke-state="coffee"><div class="content"><h2><strong>CoffeeScript</strong> is awesome</h2><div class="unbrokenline"></div><h2>but it<strong> won't teach you Javascript</strong></h2></div></section><section data-bespoke-state="success"><div class="content"><div class="unbrokenline"></div><h1><strong>Thank You!</strong></h1><div class="unbrokenline"></div></div></section><section data-bespoke-state="waves"><div class="content"><div class="byline"><div class="classy">For more information:</div></div><h3>http://github.com/geelen/web-directions-talk</h3><div class="byline"><div class="classy">or hit me up on Twitter</div></div><div class="me"></div><h3><a href="https://twitter.com/glenmaddern">@glenmaddern</a></h3></div></section></article><script src="components/bespoke.js/dist/bespoke.js"></script><!-- build:js scripts/scripts.js--><script src="scripts/bespoke-plugins.js"></script><script src="scripts/rainbow.custom.min.js"></script><script src="scripts/app.js"></script><!-- endbuild--><script>(function() {
   var config = {
     kitId: 'rgz7pbt',
     scriptTimeout: 3000
