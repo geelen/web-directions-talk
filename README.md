@@ -14,7 +14,7 @@ If you want to relive the wonder, hit up http://geelen.github.io/web-directions-
 
 ## Further Reading
 
-* [Understanding JavaScript Function Invocation and “this” - Yahuda Katz](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)
+* [Understanding JavaScript Function Invocation and “this” - Yehuda Katz](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)
 * [Transitioning to Strict Mode - MDN](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Functions_and_function_scope/Strict_mode/Transitioning_to_strict_mode)
 * [Strict Mode - MDN](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Functions_and_function_scope/Strict_mode?redirectlocale=en-US&redirectslug=JavaScript%2FStrict_mode)
 * [Your browser's Strict Mode compatibility - Kangax](http://kangax.github.io/es5-compat-table/strict-mode/)
